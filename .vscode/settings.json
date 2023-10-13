@@ -1,0 +1,9 @@
+{
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "material-icon-theme.folders.associations": {
+        "src/main": "src",
+        "entities": "core",
+        "repositories": "context",
+        "daos": "connection"
+    }
+}
