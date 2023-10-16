@@ -20,8 +20,6 @@ public class Denuncia {
 
     private TipoStatus status;
 
-    private boolean isVisualizada;
-
     private List<Comentario> comentarios;
 
     private LocalDate data;
@@ -29,21 +27,20 @@ public class Denuncia {
     private LocalTime hora;
 
     public Denuncia(Usuario aluno, String titulo, String descricao, String local, TipoDenuncia tipo, TipoStatus status,
-            boolean isVisualizada, List<Comentario> comentarios, LocalDate data, LocalTime hora) {
+            List<Comentario> comentarios, LocalDate data, LocalTime hora) {
         this.aluno = aluno;
         this.titulo = titulo;
         this.descricao = descricao;
         this.local = local;
         this.tipo = tipo;
         this.status = status;
-        this.isVisualizada = isVisualizada;
         this.comentarios = comentarios;
         this.data = data;
         this.hora = hora;
     }
 
     public Denuncia(int id, Usuario aluno, String titulo, String descricao, String local, TipoDenuncia tipo,
-            TipoStatus status, boolean isVisualizada, List<Comentario> comentarios, LocalDate data, LocalTime hora) {
+            TipoStatus status, List<Comentario> comentarios, LocalDate data, LocalTime hora) {
         this.id = id;
         this.aluno = aluno;
         this.titulo = titulo;
@@ -51,7 +48,6 @@ public class Denuncia {
         this.local = local;
         this.tipo = tipo;
         this.status = status;
-        this.isVisualizada = isVisualizada;
         this.comentarios = comentarios;
         this.data = data;
         this.hora = hora;
@@ -105,14 +101,6 @@ public class Denuncia {
         this.status = status;
     }
 
-    public boolean isVisualizada() {
-        return isVisualizada;
-    }
-
-    public void setVisualizada(boolean isVisualizada) {
-        this.isVisualizada = isVisualizada;
-    }
-
     public List<Comentario> getComentarios() {
         return comentarios;
     }
@@ -148,7 +136,7 @@ public class Denuncia {
     @Override
     public String toString() {
         return "Denuncia [id=" + id + ", aluno=" + aluno + ", titulo=" + titulo + ", descricao=" + descricao + ", tipo="
-                + tipo + ", status=" + status + ", isVisualizada=" + isVisualizada + ", comentarios=" + comentarios
+                + tipo + ", status=" + status + ", comentarios=" + comentarios
                 + ", data=" + data + ", hora=" + hora + "]";
     }
 

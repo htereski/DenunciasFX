@@ -20,6 +20,10 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 
     private static final String GET_BY_ID = "SELECT * FROM usuarios WHERE id=? AND ativo=1";
 
+    private static final String GET_MODERADOR_BY_COMENTARIO = "SELECT moderadorId FROM comentarios WHERE id=?";
+
+    private static final String GET_ALUNO_BY_DENUNCIA = "SELECT alunoId FROM denuncias WHERE id=?";
+
     private static final String EXCLUIR = "UPDATE usuarios SET ativo=0 WHERE id=?";
 
     private FabricaConexoes fabricaConexoes;
@@ -98,6 +102,46 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
             }
 
             return Resultado.erro("Falha ao encontrar usuário!");
+        } catch (SQLException e) {
+            return Resultado.erro(e.getMessage());
+        }
+    }
+
+    @Override
+    public Resultado getByComentarioId(int comentarioId) {
+        try (Connection connection = fabricaConexoes.getConnection()) {
+
+            PreparedStatement pstm = connection.prepareStatement(GET_MODERADOR_BY_COMENTARIO);
+
+            pstm.setInt(1, comentarioId);
+
+            ResultSet rs = pstm.executeQuery();
+
+            if (rs.next()) {
+                return getById(rs.getInt("moderadorId"));
+            }
+
+            return Resultado.erro("Falha ao encontrar moderador!");
+        } catch (SQLException e) {
+            return Resultado.erro(e.getMessage());
+        }
+    }
+
+    @Override
+    public Resultado getByDenunciaId(int denunciaId) {
+        try (Connection connection = fabricaConexoes.getConnection()) {
+
+            PreparedStatement pstm = connection.prepareStatement(GET_ALUNO_BY_DENUNCIA);
+
+            pstm.setInt(1, denunciaId);
+
+            ResultSet rs = pstm.executeQuery();
+
+            if (rs.next()) {
+                return getById(rs.getInt("alunoId"));
+            }
+
+            return Resultado.erro("Falha ao encontrar aluno!");
         } catch (SQLException e) {
             return Resultado.erro(e.getMessage());
         }

@@ -11,5 +11,9 @@ public interface UsuarioDAO {
 
     public Resultado getById(int id);
 
+    public Resultado getByComentarioId(int comentarioId);
+
+    public Resultado getByDenunciaId(int denunciaId);
+
     public Resultado excluir(int id);
 }
