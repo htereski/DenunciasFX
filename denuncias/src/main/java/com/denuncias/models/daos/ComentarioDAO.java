@@ -8,5 +8,4 @@ public interface ComentarioDAO {
     public Resultado criar(Comentario comentario, int denunciaId);
 
     public Resultado getByDenunciaId(int denunciaId);
-
 }

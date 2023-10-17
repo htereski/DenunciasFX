@@ -1,9 +1,11 @@
 package com.denuncias.models.daos;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +25,8 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
     private static final String GET_MODERADOR_BY_COMENTARIO = "SELECT moderadorId FROM comentarios WHERE id=?";
 
     private static final String GET_ALUNO_BY_DENUNCIA = "SELECT alunoId FROM denuncias WHERE id=?";
+
+    private static final String ALTERAR_SENHA = "CALL trocarSenha(?, ?, ?)";
 
     private static final String EXCLUIR = "UPDATE usuarios SET ativo=0 WHERE id=?";
 
@@ -142,6 +146,45 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
             }
 
             return Resultado.erro("Falha ao encontrar aluno!");
+        } catch (SQLException e) {
+            return Resultado.erro(e.getMessage());
+        }
+    }
+
+    @Override
+    public Resultado alterarSenha(int id, String senha) {
+        try (Connection connection = fabricaConexoes.getConnection()) {
+
+            CallableStatement call = connection.prepareCall(ALTERAR_SENHA);
+
+            call.setInt(1, id);
+            call.setString(2, senha);
+            call.registerOutParameter(3, Types.TINYINT);
+
+            call.execute();
+
+            int res = call.getInt(3);
+
+            return Resultado.sucesso("Senha alterada!", res);
+        } catch (SQLException e) {
+            return Resultado.erro(e.getMessage());
+        }
+    }
+
+    @Override
+    public Resultado recuperarConta(String email) {
+        try (Connection connection = fabricaConexoes.getConnection()) {
+
+            CallableStatement call = connection.prepareCall(ALTERAR_SENHA);
+
+            call.setString(1, email);
+            call.registerOutParameter(2, Types.VARCHAR);
+
+            call.execute();
+
+            String res = call.getString(2);
+
+            return Resultado.sucesso("Conta recuperada!", res);
         } catch (SQLException e) {
             return Resultado.erro(e.getMessage());
         }

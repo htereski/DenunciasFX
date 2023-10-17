@@ -15,5 +15,9 @@ public interface UsuarioDAO {
 
     public Resultado getByDenunciaId(int denunciaId);
 
+    public Resultado alterarSenha(int id, String senha);
+
+    public Resultado recuperarConta(String email);
+
     public Resultado excluir(int id);
 }
