@@ -177,7 +177,7 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
     public Resultado recuperarConta(String email) {
         try (Connection connection = fabricaConexoes.getConnection()) {
 
-            CallableStatement call = connection.prepareCall(ALTERAR_SENHA);
+            CallableStatement call = connection.prepareCall(RECUPERAR_CONTA);
 
             call.setString(1, email);
             call.registerOutParameter(2, Types.VARCHAR);
