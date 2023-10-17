@@ -28,6 +28,8 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 
     private static final String ALTERAR_SENHA = "CALL trocarSenha(?, ?, ?)";
 
+    private static final String RECUPERAR_CONTA = "CALL recuperarConta(?, ?)";
+
     private static final String EXCLUIR = "UPDATE usuarios SET ativo=0 WHERE id=?";
 
     private FabricaConexoes fabricaConexoes;
