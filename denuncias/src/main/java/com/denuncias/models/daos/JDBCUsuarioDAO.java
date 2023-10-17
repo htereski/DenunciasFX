@@ -20,7 +20,7 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 
     private static final String GET_MODERADORES = "SELECT id, nome FROM usuarios WHERE tipo=MODERADOR AND ativo=1";
 
-    private static final String GET_BY_ID = "SELECT * FROM usuarios WHERE id=? AND ativo=1";
+    private static final String GET_BY_ID = "SELECT * FROM usuarios WHERE id=?";
 
     private static final String GET_MODERADOR_BY_COMENTARIO = "SELECT moderadorId FROM comentarios WHERE id=?";
 
