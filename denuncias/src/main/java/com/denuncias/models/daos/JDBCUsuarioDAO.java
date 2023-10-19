@@ -169,7 +169,11 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 
             int res = call.getInt(3);
 
-            return Resultado.sucesso("Senha alterada!", res);
+            if (res == 0) {
+                return Resultado.sucesso("Senha alterada!", res);
+            }
+
+            return Resultado.erro("Não foi possivel trocar a senha!");
         } catch (SQLException e) {
             return Resultado.erro(e.getMessage());
         }
@@ -189,6 +193,10 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 
             String nome = call.getString(2);
             String senha = call.getString(3);
+
+            if (nome.equals("Inválido.")) {
+                return Resultado.erro("Email não encontrado");
+            }
 
             Usuario usuario = new Usuario(nome, email, senha, null);
 
