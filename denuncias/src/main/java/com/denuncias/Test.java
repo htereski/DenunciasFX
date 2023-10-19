@@ -13,8 +13,12 @@ import com.denuncias.models.daos.JDBCUsuarioDAO;
 import com.denuncias.models.daos.UsuarioDAO;
 import com.denuncias.models.entities.Comentario;
 import com.denuncias.models.entities.Denuncia;
+import com.denuncias.models.entities.TipoDenuncia;
+import com.denuncias.models.entities.TipoStatus;
+import com.denuncias.models.entities.TipoUsuario;
 import com.denuncias.models.entities.Usuario;
 import com.denuncias.models.repositories.DenunciaRepository;
+import com.denuncias.models.repositories.UsuarioRepository;
 import com.github.hugoperlin.results.Resultado;
 
 public class Test {
@@ -26,26 +30,12 @@ public class Test {
 
         ComentarioDAO comentarioDAO = new JDBCComentarioDAO(FabricaConexoes.getInstance());
 
-        DenunciaRepository denunciaRepository = new DenunciaRepository(denunciaDAO, usuarioDAO, comentarioDAO);
+        UsuarioRepository usuarioRepository = new UsuarioRepository(usuarioDAO);
+      
 
-        Resultado r1 = denunciaRepository.porUsuario(2);
-        
+        Resultado r1 = usuarioRepository.cadastrar("Betinho", "betinho@gmail.com", "12345678", TipoUsuario.MODERADOR);
 
-        if (r1.foiErro()) {
-            System.out.println(r1.getMsg());
-        } else {
-            List<Denuncia> denuncias = (List) r1.comoSucesso().getObj();
-
-            for (Denuncia denuncia : denuncias) {
-                System.out.println(denuncia.getTitulo() + " % " + denuncia.getDescricao() + " % " + denuncia.getStatus() + " % " + denuncia.getAluno().getNome());
-                
-                for (Comentario comentario : denuncia.getComentarios()) {
-                    System.out.println("-----------------------------");
-                    System.out.println(comentario.getConteudo() + " % " + comentario.getModerador().getNome());
-                    System.out.println("-----------------------------");
-                }
-            }
-        }
+        System.out.println(r1.getMsg());
 
     }
 }

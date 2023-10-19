@@ -57,7 +57,7 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
                 return Resultado.sucesso("Usuário cadastrado!", usuario);
             }
 
-            return Resultado.erro("Falha ao inserir usuário!");
+            return Resultado.erro("Email já cadastrado!");
         } catch (SQLException e) {
             return Resultado.erro(e.getMessage());
         }
