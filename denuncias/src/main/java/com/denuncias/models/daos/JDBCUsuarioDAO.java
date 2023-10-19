@@ -16,9 +16,9 @@ import com.github.hugoperlin.results.Resultado;
 
 public class JDBCUsuarioDAO implements UsuarioDAO {
 
-    private static final String INSERT = "INSERT INTO usuarios(nome, email, senha, tipo) VALUES(?, ?, ?, ?)";
+    private static final String INSERT = "INSERT IGNORE INTO usuarios(nome, email, senha, tipo) VALUES(?, ?, ?, ?)";
 
-    private static final String GET_MODERADORES = "SELECT id, nome FROM usuarios WHERE tipo=MODERADOR AND ativo=1";
+    private static final String GET_MODERADORES = "SELECT id, nome FROM usuarios WHERE tipo=? AND ativo=1";
 
     private static final String GET_BY_ID = "SELECT * FROM usuarios WHERE id=?";
 
@@ -28,7 +28,7 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 
     private static final String ALTERAR_SENHA = "CALL trocarSenha(?, ?, ?)";
 
-    private static final String RECUPERAR_CONTA = "CALL recuperarConta(?, ?)";
+    private static final String RECUPERAR_CONTA = "CALL recuperarConta(?, ?, ?)";
 
     private static final String EXCLUIR = "UPDATE usuarios SET ativo=0 WHERE id=?";
 
@@ -68,6 +68,8 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
         try (Connection connection = fabricaConexoes.getConnection()) {
 
             PreparedStatement pstm = connection.prepareStatement(GET_MODERADORES);
+
+            pstm.setString(1, "MODERADOR");
 
             ResultSet rs = pstm.executeQuery();
 
@@ -181,12 +183,16 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 
             call.setString(1, email);
             call.registerOutParameter(2, Types.VARCHAR);
+            call.registerOutParameter(3, Types.VARCHAR);
 
             call.execute();
 
-            String res = call.getString(2);
+            String nome = call.getString(2);
+            String senha = call.getString(3);
 
-            return Resultado.sucesso("Conta recuperada!", res);
+            Usuario usuario = new Usuario(nome, email, senha, null);
+
+            return Resultado.sucesso("Conta recuperada!", usuario);
         } catch (SQLException e) {
             return Resultado.erro(e.getMessage());
         }

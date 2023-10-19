@@ -85,7 +85,7 @@ public class JDBCDenunciaDAO implements DenunciaDAO {
                 LocalTime hora = horaAux.toLocalTime();
 
                 Denuncia denuncia = new Denuncia(id, null, titulo, descricao, local, tipo, status, null, data, hora);
-                return Resultado.sucesso("Denúncias abertas!", denuncia);
+                return Resultado.sucesso("Denúncia encontrada!", denuncia);
             }
 
             return Resultado.erro("Denúncia não encontrada!");
