@@ -9,7 +9,7 @@ import com.denuncias.models.daos.JDBCComentarioDAO;
 import com.denuncias.models.entities.TipoStatus;
 import com.denuncias.models.entities.TipoUsuario;
 import com.denuncias.models.entities.Usuario;
-import com.denuncias.models.repositories.ComentarioRepository;
+import com.denuncias.models.repositories.ComentarioRepositoryImpl;
 import com.github.hugoperlin.results.Resultado;
 
 public class Test {
@@ -17,7 +17,7 @@ public class Test {
     
         ComentarioDAO comentarioDAO = new JDBCComentarioDAO(FabricaConexoes.getInstance());
       
-        ComentarioRepository comentarioRepository = new ComentarioRepository(comentarioDAO);
+        ComentarioRepositoryImpl comentarioRepository = new ComentarioRepositoryImpl(comentarioDAO);
 
         Usuario moderador = new Usuario(12, "Leticia", "leticia@gmail.com", "12345678", TipoUsuario.MODERADOR);
 
