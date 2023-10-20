@@ -1,7 +1,5 @@
 package com.denuncias.models.repositories;
 
-import javax.naming.spi.DirStateFactory.Result;
-
 import com.denuncias.models.daos.UsuarioDAO;
 import com.denuncias.models.entities.TipoUsuario;
 import com.denuncias.models.entities.Usuario;
