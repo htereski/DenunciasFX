@@ -6,22 +6,24 @@ import java.time.LocalTime;
 import com.denuncias.models.daos.ComentarioDAO;
 import com.denuncias.models.daos.FabricaConexoes;
 import com.denuncias.models.daos.JDBCComentarioDAO;
+import com.denuncias.models.daos.JDBCUsuarioDAO;
+import com.denuncias.models.daos.UsuarioDAO;
 import com.denuncias.models.entities.TipoStatus;
 import com.denuncias.models.entities.TipoUsuario;
 import com.denuncias.models.entities.Usuario;
 import com.denuncias.models.repositories.ComentarioRepositoryImpl;
+import com.denuncias.models.repositories.UsuarioRepository;
+import com.denuncias.models.repositories.UsuarioRepositoryImpl;
 import com.github.hugoperlin.results.Resultado;
 
 public class Test {
     public static void main(String[] args) {
     
-        ComentarioDAO comentarioDAO = new JDBCComentarioDAO(FabricaConexoes.getInstance());
-      
-        ComentarioRepositoryImpl comentarioRepository = new ComentarioRepositoryImpl(comentarioDAO);
+        UsuarioDAO usuarioDAO = new JDBCUsuarioDAO(FabricaConexoes.getInstance());
 
-        Usuario moderador = new Usuario(12, "Leticia", "leticia@gmail.com", "12345678", TipoUsuario.MODERADOR);
+        UsuarioRepository usuarioRepository = new UsuarioRepositoryImpl(usuarioDAO);
 
-        Resultado r1 = comentarioRepository.cadastrar("testando o comentario", moderador, TipoStatus.INVESTIGANDO, LocalDate.now(), LocalTime.now(), 8);
+        Resultado r1 = usuarioRepository.recuperarSenha("Mateusgoncalvesjunior@gmail.com");
 
         System.out.println(r1.getMsg());
 
