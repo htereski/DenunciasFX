@@ -42,6 +42,7 @@ public class JDBCDenunciaDAO implements DenunciaDAO {
             pstm.setInt(1, denuncia.getAluno().getId());
             pstm.setString(2, denuncia.getTitulo());
             pstm.setString(3, denuncia.getDescricao());
+            denuncia.getTipo().getDenuncia().replace('é', 'e');
             pstm.setString(4, denuncia.getTipo().getDenuncia().toUpperCase());
             pstm.setString(5, denuncia.getLocal());
             pstm.setString(6, denuncia.getStatus().getStatus().toUpperCase());

@@ -4,6 +4,8 @@ import com.denuncias.models.entities.TipoUsuario;
 import com.github.hugoperlin.results.Resultado;
 
 public interface UsuarioRepository {
+
+    public Resultado logar(String email, String senha);
     
     public Resultado cadastrar(String nome, String email, String senha, TipoUsuario tipo);
 

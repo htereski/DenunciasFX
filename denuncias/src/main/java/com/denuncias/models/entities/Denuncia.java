@@ -135,9 +135,7 @@ public class Denuncia {
 
     @Override
     public String toString() {
-        return "Denuncia [id=" + id + ", aluno=" + aluno + ", titulo=" + titulo + ", descricao=" + descricao + ", tipo="
-                + tipo + ", status=" + status + ", comentarios=" + comentarios
-                + ", data=" + data + ", hora=" + hora + "]";
+        return titulo;
     }
 
 }

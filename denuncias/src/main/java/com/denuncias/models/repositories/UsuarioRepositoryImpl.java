@@ -15,11 +15,7 @@ public class UsuarioRepositoryImpl implements UsuarioRepository {
     }
 
     @Override
-    public Resultado cadastrar(String nome, String email, String senha, TipoUsuario tipo) {
-
-        if (nome.isEmpty() || nome.isBlank()) {
-            return Resultado.erro("Nome inválido!");
-        }
+    public Resultado logar(String email, String senha) {
 
         if (email.isEmpty() || email.isBlank()) {
             return Resultado.erro("Email inválido!");
@@ -27,6 +23,24 @@ public class UsuarioRepositoryImpl implements UsuarioRepository {
 
         if (senha.isEmpty() || senha.isBlank() || senha.length() < 8 || senha.length() > 20) {
             return Resultado.erro("Senha inválida!");
+        }
+
+        return usuarioDAO.logar(email, senha);
+    }
+
+    @Override
+    public Resultado cadastrar(String nome, String email, String senha, TipoUsuario tipo) {
+
+        if (nome.isEmpty() || nome.isBlank()) {
+            return Resultado.erro("Nome inválido!");
+        }
+
+        if (email.isEmpty() || email.isBlank()) {
+            return Resultado.erro("Email inválido! O email deve pertencer ao domínio Gmail.");
+        }
+
+        if (senha.isEmpty() || senha.isBlank() || senha.length() < 8 || senha.length() > 20) {
+            return Resultado.erro("Senha inválida! A senha deve possuir no mínimo 8 caracteres e no máximo 20.");
         }
 
         if (tipo == null) {

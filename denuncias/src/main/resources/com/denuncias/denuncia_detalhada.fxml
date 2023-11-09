@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright (c) 2017, Gluon and/or its affiliates.
+    All rights reserved. Use is subject to license terms.
+
+    This file is available and licensed under the following license:
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions
+    are met:
+
+   - Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+   - Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in
+     the documentation and/or other materials provided with the distribution.
+   - Neither the name of Oracle Corporation and Gluon nor the names of its
+     contributors may be used to endorse or promote products derived
+     from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.denuncias.controllers.DenunciaDetalhada">
+    <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="60.0" layoutY="540.0" stroke="DODGERBLUE" strokeType="INSIDE" width="335.0" />
+      <Button layoutX="51.0" layoutY="554.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" textAlignment="CENTER" textFill="DODGERBLUE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Label layoutX="137.0" layoutY="37.0" text="Denúncia" />
+      <SplitPane dividerPositions="0.29797979797979796" layoutX="34.0" layoutY="90.0" prefHeight="150.0" prefWidth="266.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Label layoutX="20.0" text="Titulo" />
+                  <Label layoutX="12.0" layoutY="30.0" text="Detalhes" />
+                  <Label layoutX="22.0" layoutY="60.0" text="Hora" />
+                  <Label layoutX="22.0" layoutY="90.0" text="Data" />
+                  <Label layoutX="19.0" layoutY="125.0" text="Status" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Label fx:id="lbTitulo" layoutX="5.0" text="conteudoTitulo">
+                     <tooltip>
+                        <Tooltip fx:id="toolTitulo" text="Empty Tooltip" />
+                     </tooltip>
+                  </Label>
+                  <Label fx:id="lbDetalhes" layoutX="5.0" layoutY="30.0" text="conteudoDetalhes">
+                     <tooltip>
+                        <Tooltip fx:id="toolDetalhes" text="Empty Tooltip" />
+                     </tooltip>
+                  </Label>
+                  <Label fx:id="lbHora" layoutX="5.0" layoutY="60.0" text="horaDetalhes" />
+                  <Label fx:id="lbData" layoutX="5.0" layoutY="90.0" text="dataDelahes" />
+                  <Label fx:id="lbStatus" layoutX="5.0" layoutY="125.0" text="statusDetalhes" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <Label layoutX="39.0" layoutY="264.0" text="Comentários" />
+      <ListView fx:id="lstComentarios" layoutX="32.0" layoutY="289.0" prefHeight="210.0" prefWidth="266.0">
+         
+     </ListView>
+    </children>
+</AnchorPane>

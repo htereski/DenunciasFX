@@ -32,36 +32,44 @@ public class DenunciaRepositoryImpl implements DenunciaRepository {
     public Resultado cadastrar(Usuario aluno, String titulo, String descricao, String local, TipoDenuncia tipo,
             TipoStatus status, LocalDate data, LocalTime hora) {
 
+        if (tipo == null) {
+            return Resultado.erro("Tipo inválido");
+        }
+
         if (titulo.isBlank() || titulo.isEmpty()) {
             return Resultado.erro("Titulo inválido");
         }
 
-        if (descricao.isBlank() || descricao.isEmpty()) {
-            return Resultado.erro("Descrição inválida");
+        if (titulo.length() > 45) {
+            return Resultado.erro("Titulo inválido, contém muitos caracteres.");
         }
 
         if (local.isBlank() || local.isEmpty()) {
             return Resultado.erro("Local inválido");
         }
 
+        if (local.length() > 45) {
+            return Resultado.erro("Local inválido, contém muitos caracteres.");
+        }
+
+        if (data == null || data.isAfter(LocalDate.now())) {
+            return Resultado.erro("Data inválida");
+        }
+
+        if (hora == null || hora.isAfter(LocalTime.now())) {
+            return Resultado.erro("Hora inválida");
+        }
+
+        if (descricao.isBlank() || descricao.isEmpty()) {
+            return Resultado.erro("Descrição inválida");
+        }
+
         if (aluno == null) {
             return Resultado.erro("Usuário inválido");
         }
 
-        if (tipo == null) {
-            return Resultado.erro("Tipo inválido");
-        }
-
         if (status == null) {
             return Resultado.erro("Status inválido");
-        }
-
-        if (data == null) {
-            return Resultado.erro("Data inválida");
-        }
-
-        if (hora == null) {
-            return Resultado.erro("Hora inválida");
         }
 
         Denuncia denuncia = new Denuncia(aluno, titulo, descricao, local, tipo, status, null, data, hora);

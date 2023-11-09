@@ -8,7 +8,9 @@ public enum TipoDenuncia {
     CONFLITO ("Conflito"),
     ROUBO ("Roubo"),
     VANDALISMO ("Vandalismo"),
-    COMPORTAMENTO_INDISCIPLINADO ("Comportamento Indiscipliando");
+    COMPORTAMENTO_INDISCIPLINADO ("Comportamento_Indisciplinado"),
+    DROGA ("Droga"),
+    OUTROS ("Outros");
 
     private final String denuncia;
 

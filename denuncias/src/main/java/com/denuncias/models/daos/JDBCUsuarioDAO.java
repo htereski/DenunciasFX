@@ -26,6 +26,8 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 
     private static final String GET_ALUNO_BY_DENUNCIA = "SELECT alunoId FROM denuncias WHERE id=?";
 
+    private static final String LOGAR = "SELECT * FROM usuarios WHERE email=? AND senha=? AND ativo=1";
+
     private static final String ALTERAR_SENHA = "CALL trocarSenha(?, ?, ?)";
 
     private static final String RECUPERAR_CONTA = "CALL recuperarConta(?, ?, ?)";
@@ -150,6 +152,32 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
             }
 
             return Resultado.erro("Falha ao encontrar aluno!");
+        } catch (SQLException e) {
+            return Resultado.erro(e.getMessage());
+        }
+    }
+
+    @Override
+    public Resultado logar(String email, String senha) {
+        try (Connection connection = fabricaConexoes.getConnection()) {
+            
+            PreparedStatement pstm = connection.prepareStatement(LOGAR);
+
+            pstm.setString(1, email);
+            pstm.setString(2, senha);
+
+            ResultSet rs = pstm.executeQuery();
+
+            if (rs.next()) {
+                int id = rs.getInt("id");
+                String nome = rs.getString("nome");
+                TipoUsuario tipoUsuario = TipoUsuario.valueOf(rs.getString("tipo"));
+
+                Usuario usuario = new Usuario(id, nome, email, senha, tipoUsuario);
+                return Resultado.sucesso("Usuário encontrado!", usuario);
+            }
+
+            return Resultado.erro("Email ou senha inválidos!");
         } catch (SQLException e) {
             return Resultado.erro(e.getMessage());
         }

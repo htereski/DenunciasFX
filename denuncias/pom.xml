@@ -17,6 +17,13 @@
 		</repository>
 	</repositories>
     <dependencies>
+
+        <dependency>
+            <groupId>org.jfxtras</groupId>
+            <artifactId>jfxtras-controls</artifactId>
+            <version>17-r1</version>
+        </dependency>
+
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
@@ -47,11 +54,14 @@
             <artifactId>javafaker</artifactId>
             <version>1.0.2</version>
         </dependency>
+        <!-- 
         <dependency>
             <groupId>com.github.hugoperlin</groupId>
             <artifactId>navigatorfx</artifactId>
             <version>1.0.2</version>
         </dependency>
+        -->
+         
         <dependency>
             <groupId>com.sun.mail</groupId>
             <artifactId>javax.mail</artifactId>
