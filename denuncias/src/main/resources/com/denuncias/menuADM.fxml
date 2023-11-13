@@ -40,30 +40,30 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.denuncias.controllers.MenuADM">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.denuncias.controllers.MenuADM">
     <children>
       <Group layoutX="34.0" layoutY="240.0">
          <children>
-            <Button layoutY="150.0" mnemonicParsing="false" onAction="#alterarSenha" prefHeight="40.0" prefWidth="266.0" text="ALTERAR SENHA" textAlignment="CENTER">
+            <Button layoutY="150.0" mnemonicParsing="false" onAction="#alterarSenha" prefHeight="40.0" prefWidth="266.0" styleClass="btn" text="ALTERAR SENHA" textAlignment="CENTER">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button mnemonicParsing="false" onAction="#adicionarModerador" prefHeight="40.0" prefWidth="266.0" text="ADICIONAR MODERADOR" textAlignment="CENTER">
+            <Button mnemonicParsing="false" onAction="#adicionarModerador" prefHeight="40.0" prefWidth="266.0" styleClass="btn" text="ADICIONAR MODERADOR" textAlignment="CENTER">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button layoutY="50.0" mnemonicParsing="false" onAction="#removerModerador" prefHeight="40.0" prefWidth="266.0" text="REMOVER MODERADOR" textAlignment="CENTER">
+            <Button layoutY="50.0" mnemonicParsing="false" onAction="#removerModerador" prefHeight="40.0" prefWidth="266.0" styleClass="btn" text="REMOVER MODERADOR" textAlignment="CENTER">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button layoutY="100.0" mnemonicParsing="false" onAction="#mostrarDenuncias" prefHeight="40.0" prefWidth="266.0" text="MOSTRAR DENÚNCIAS" textAlignment="CENTER">
+            <Button layoutY="100.0" mnemonicParsing="false" onAction="#mostrarDenuncias" prefHeight="40.0" prefWidth="266.0" styleClass="btn" text="MOSTRAR DENÚNCIAS" textAlignment="CENTER">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
          </children>
       </Group>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="60.0" layoutY="540.0" stroke="DODGERBLUE" strokeType="INSIDE" width="335.0" />
-      <Button layoutX="51.0" layoutY="554.0" mnemonicParsing="false" onAction="#fechar" text="Sair" textAlignment="CENTER" textFill="DODGERBLUE">
+      <Button layoutX="51.0" layoutY="554.0" mnemonicParsing="false" onAction="#fechar" styleClass="voltar" text="Sair" textAlignment="CENTER" textFill="DODGERBLUE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>

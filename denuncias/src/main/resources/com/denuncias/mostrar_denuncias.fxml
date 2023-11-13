@@ -41,19 +41,19 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.denuncias.controllers.MostrarDenuncias">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.denuncias.controllers.MostrarDenuncias">
     <children>
-      <Button layoutX="34.0" layoutY="451.0" mnemonicParsing="false" onAction="#detalhes" prefHeight="40.0" prefWidth="266.0" text="DETALHES" textAlignment="CENTER">
+      <Button layoutX="34.0" layoutY="451.0" mnemonicParsing="false" onAction="#detalhes" prefHeight="40.0" prefWidth="266.0" styleClass="btn" text="DETALHES" textAlignment="CENTER">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="60.0" layoutY="540.0" stroke="DODGERBLUE" strokeType="INSIDE" width="335.0" />
-      <Button layoutX="51.0" layoutY="554.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" textAlignment="CENTER" textFill="DODGERBLUE">
+      <Button layoutX="51.0" layoutY="554.0" mnemonicParsing="false" onAction="#voltar" styleClass="voltar" text="Voltar" textAlignment="CENTER" textFill="DODGERBLUE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <ListView fx:id="lstDenuncias" layoutX="34.0" layoutY="76.0" prefHeight="335.0" prefWidth="266.0" />
+      <ListView fx:id="lstDenuncias" layoutX="34.0" layoutY="76.0" prefHeight="335.0" prefWidth="266.0" styleClass="fundoClaro" />
       <Label layoutX="139.0" layoutY="31.0" text="Denúncias" />
       <StackPane fx:id="pane" disable="true" layoutX="67.0" layoutY="169.0" prefHeight="150.0" prefWidth="200.0" visible="false">
          <children>

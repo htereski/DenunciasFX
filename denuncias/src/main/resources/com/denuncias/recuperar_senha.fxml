@@ -44,7 +44,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.denuncias.controllers.RecuperarSenha">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.denuncias.controllers.RecuperarSenha">
     <children>
         <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="92.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
             <image>
@@ -52,12 +52,12 @@
             </image>
         </ImageView>
         <TextField fx:id="tfEmail" layoutX="34.0" layoutY="234.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="28.0" prefWidth="268.0" promptText="Email" />
-        <Button layoutX="34.0" layoutY="315.0" mnemonicParsing="false" onAction="#enviarEmail" prefHeight="40.0" prefWidth="268.0" text="ENVIAR E-MAIL" textAlignment="CENTER">
+        <Button layoutX="34.0" layoutY="315.0" mnemonicParsing="false" onAction="#enviarEmail" prefHeight="40.0" prefWidth="268.0" styleClass="btn" text="ENVIAR E-MAIL" textAlignment="CENTER">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="60.0" layoutY="540.0" stroke="DODGERBLUE" strokeType="INSIDE" width="335.0" />
-      <Button layoutX="51.0" layoutY="554.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" textAlignment="CENTER" textFill="DODGERBLUE">
+      <Button layoutX="51.0" layoutY="554.0" mnemonicParsing="false" onAction="#voltar" styleClass="voltar" text="Voltar" textAlignment="CENTER" textFill="DODGERBLUE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
@@ -66,7 +66,7 @@
             <ProgressIndicator fx:id="progressIndicator" visible="false" />
          </children>
       </StackPane>
-      <Label layoutX="48.0" layoutY="208.0" text="Digite o email da sua conta que deseja recuperar">
+      <Label layoutX="23.0" layoutY="207.0" text="Digite o email da sua conta que deseja recuperar">
          <font>
             <Font size="11.0" />
          </font>

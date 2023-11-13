@@ -89,10 +89,12 @@ public class FazerLogin {
                 Usuario usuario = (Usuario) resultado.comoSucesso().getObj();
 
                 if (usuario.getTipo().getUsuario().equals("Admin")) {
-                    App.pushScreen("MENUADM", o -> new MenuADM(comentarioRepository, denunciaRepository, usuarioRepository, usuario));
+                    App.pushScreen("MENUADM",
+                            o -> new MenuADM(comentarioRepository, denunciaRepository, usuarioRepository, usuario));
                 } else if (usuario.getTipo().getUsuario().equals("Moderador")) {
                     App.pushScreen("MENUAMODERADOR",
-                            o -> new MenuMODERADOR(comentarioRepository, usuarioRepository, denunciaRepository, usuario));
+                            o -> new MenuMODERADOR(comentarioRepository, usuarioRepository, denunciaRepository,
+                                    usuario));
                 } else {
                     App.pushScreen("MENUALUNO", o -> new MenuALUNO(usuarioRepository, usuario, denunciaRepository));
                 }
