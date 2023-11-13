@@ -4,6 +4,8 @@ import java.util.Optional;
 
 import com.denuncias.App;
 import com.denuncias.models.entities.Usuario;
+import com.denuncias.models.repositories.ComentarioRepository;
+import com.denuncias.models.repositories.DenunciaRepository;
 import com.denuncias.models.repositories.UsuarioRepository;
 
 import javafx.event.ActionEvent;
@@ -14,12 +16,19 @@ import javafx.scene.control.ButtonType;
 
 public class MenuMODERADOR {
 
+    private ComentarioRepository comentarioRepository;
+
     private UsuarioRepository usuarioRepository;
+
+    private DenunciaRepository denunciaRepository;
 
     private Usuario moderador;
 
-    public MenuMODERADOR(UsuarioRepository usuarioRepository, Usuario moderador) {
+    public MenuMODERADOR(ComentarioRepository comentarioRepository, UsuarioRepository usuarioRepository,
+            DenunciaRepository denunciaRepository, Usuario moderador) {
+        this.comentarioRepository = comentarioRepository;
         this.usuarioRepository = usuarioRepository;
+        this.denunciaRepository = denunciaRepository;
         this.moderador = moderador;
     }
 
@@ -28,12 +37,12 @@ public class MenuMODERADOR {
 
     @FXML
     void alterarSenha(ActionEvent event) {
-
+        App.pushScreen("TROCARSENHA", o -> new TrocarSenha(moderador, usuarioRepository));
     }
 
     @FXML
     void mostrarDenuncias(ActionEvent event) {
-
+        App.pushScreen("MOSTRARDENUNCIAS", o -> new MostrarDenuncias(comentarioRepository, denunciaRepository, moderador));
     }
 
     @FXML

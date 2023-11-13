@@ -5,6 +5,7 @@ import java.util.Optional;
 import com.denuncias.App;
 import com.denuncias.models.entities.TipoUsuario;
 import com.denuncias.models.entities.Usuario;
+import com.denuncias.models.repositories.ComentarioRepository;
 import com.denuncias.models.repositories.DenunciaRepository;
 import com.denuncias.models.repositories.UsuarioRepository;
 import com.github.hugoperlin.results.Resultado;
@@ -43,9 +44,13 @@ public class FazerLogin {
 
     private DenunciaRepository denunciaRepository;
 
-    public FazerLogin(UsuarioRepository usuarioRepository, DenunciaRepository denunciaRepository) {
+    private ComentarioRepository comentarioRepository;
+
+    public FazerLogin(UsuarioRepository usuarioRepository, DenunciaRepository denunciaRepository,
+            ComentarioRepository comentarioRepository) {
         this.usuarioRepository = usuarioRepository;
         this.denunciaRepository = denunciaRepository;
+        this.comentarioRepository = comentarioRepository;
     }
 
     @FXML
@@ -84,9 +89,10 @@ public class FazerLogin {
                 Usuario usuario = (Usuario) resultado.comoSucesso().getObj();
 
                 if (usuario.getTipo().getUsuario().equals("Admin")) {
-                    App.pushScreen("MENUADM", o -> new MenuADM(usuarioRepository, usuario));
+                    App.pushScreen("MENUADM", o -> new MenuADM(comentarioRepository, denunciaRepository, usuarioRepository, usuario));
                 } else if (usuario.getTipo().getUsuario().equals("Moderador")) {
-                    App.pushScreen("MENUAMODERADOR", o -> new MenuMODERADOR(usuarioRepository, usuario));
+                    App.pushScreen("MENUAMODERADOR",
+                            o -> new MenuMODERADOR(comentarioRepository, usuarioRepository, denunciaRepository, usuario));
                 } else {
                     App.pushScreen("MENUALUNO", o -> new MenuALUNO(usuarioRepository, usuario, denunciaRepository));
                 }

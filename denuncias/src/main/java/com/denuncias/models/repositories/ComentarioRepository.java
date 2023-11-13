@@ -10,4 +10,6 @@ import com.github.hugoperlin.results.Resultado;
 public interface ComentarioRepository {
     
     public Resultado cadastrar(String conteudo, Usuario moderador, TipoStatus status, LocalDate data, LocalTime hora, int denunciaId);
+
+    public Resultado getByDenuncia(int id);
 }

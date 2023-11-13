@@ -22,7 +22,7 @@ public class UsuarioRepositoryImpl implements UsuarioRepository {
         }
 
         if (senha.isEmpty() || senha.isBlank() || senha.length() < 8 || senha.length() > 20) {
-            return Resultado.erro("Senha inválida!");
+            return Resultado.erro("Senha inválida! A senha deve possuir no mínimo 8 e no \nmáximo 20 caracteres.");
         }
 
         return usuarioDAO.logar(email, senha);
@@ -40,7 +40,7 @@ public class UsuarioRepositoryImpl implements UsuarioRepository {
         }
 
         if (senha.isEmpty() || senha.isBlank() || senha.length() < 8 || senha.length() > 20) {
-            return Resultado.erro("Senha inválida! A senha deve possuir no mínimo 8 caracteres e no máximo 20.");
+            return Resultado.erro("Senha inválida! A senha deve possuir no mínimo 8 e no \nmáximo 20 caracteres.");
         }
 
         if (tipo == null) {

@@ -4,10 +4,13 @@ import com.denuncias.controllers.Cadastrar;
 import com.denuncias.controllers.DenunciaDetalhada;
 import com.denuncias.controllers.FazerDenuncia;
 import com.denuncias.controllers.FazerLogin;
+import com.denuncias.controllers.InserirComentario;
 import com.denuncias.controllers.MenuADM;
 import com.denuncias.controllers.MenuALUNO;
 import com.denuncias.controllers.MenuMODERADOR;
+import com.denuncias.controllers.MostrarDenuncias;
 import com.denuncias.controllers.RecuperarSenha;
+import com.denuncias.controllers.RemoverModerador;
 import com.denuncias.controllers.SuasDenuncias;
 import com.denuncias.controllers.TrocarSenha;
 import com.denuncias.models.daos.ComentarioDAO;
@@ -59,7 +62,7 @@ public class App extends BaseAppNavigator {
 
     @Override
     public void registrarTelas() {
-        registraTela("FAZERLOGIN", new ScreenRegistryFXML(App.class, "fazer_login.fxml", o -> new FazerLogin(usuarioRepository, denunciaRepository)));
+        registraTela("FAZERLOGIN", new ScreenRegistryFXML(App.class, "fazer_login.fxml", o -> new FazerLogin(usuarioRepository, denunciaRepository, comentarioRepository)));
         registraTela("CADASTRAR", new ScreenRegistryFXML(App.class, "cadastrar.fxml", o -> new Cadastrar()));
         registraTela("RECUPERARSENHA", new ScreenRegistryFXML(App.class, "recuperar_senha.fxml", o -> new RecuperarSenha()));
         registraTela("MENUADM", new ScreenRegistryFXML(App.class, "menuADM.fxml", o -> new MenuADM()));
@@ -69,6 +72,9 @@ public class App extends BaseAppNavigator {
         registraTela("SUASDENUNCIAS", new ScreenRegistryFXML(App.class, "suas_denuncias.fxml", o -> new SuasDenuncias()));
         registraTela("DENUNCIADETALHADA", new ScreenRegistryFXML(App.class, "denuncia_detalhada.fxml", o -> new DenunciaDetalhada()));
         registraTela("TROCARSENHA", new ScreenRegistryFXML(App.class, "trocar_senha.fxml", o -> new TrocarSenha()));
+        registraTela("MOSTRARDENUNCIAS", new ScreenRegistryFXML(App.class, "mostrar_denuncias.fxml", o -> new MostrarDenuncias()));
+        registraTela("INSERIRCOMENTARIO", new ScreenRegistryFXML(App.class, "inserir_comentario.fxml", o -> new InserirComentario()));
+        registraTela("REMOVERMODERADOR", new ScreenRegistryFXML(App.class, "remover_moderador.fxml", o -> new RemoverModerador()));
     }
 
 }

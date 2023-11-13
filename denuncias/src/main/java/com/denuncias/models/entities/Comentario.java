@@ -84,8 +84,7 @@ public class Comentario {
 
     @Override
     public String toString() {
-        return "Comentario [id=" + id + ", conteudo=" + conteudo + ", moderador=" + moderador + ", status=" + status
-                + ", data=" + data + ", hora=" + hora + "]";
+        return conteudo;
     }
 
 }

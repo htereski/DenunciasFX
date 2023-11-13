@@ -18,7 +18,7 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 
     private static final String INSERT = "INSERT IGNORE INTO usuarios(nome, email, senha, tipo) VALUES(?, ?, ?, ?)";
 
-    private static final String GET_MODERADORES = "SELECT id, nome FROM usuarios WHERE tipo=? AND ativo=1";
+    private static final String GET_MODERADORES = "SELECT id, nome, email FROM usuarios WHERE tipo=? AND ativo=1";
 
     private static final String GET_BY_ID = "SELECT * FROM usuarios WHERE id=?";
 
@@ -80,8 +80,9 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
             while (rs.next()) {
                 int id = rs.getInt("id");
                 String nome = rs.getString("nome");
+                String email = rs.getString("email");
 
-                Usuario moderador = new Usuario(id, nome, null, null, TipoUsuario.MODERADOR);
+                Usuario moderador = new Usuario(id, nome, email, null, TipoUsuario.MODERADOR);
                 moderadores.add(moderador);
             }
 

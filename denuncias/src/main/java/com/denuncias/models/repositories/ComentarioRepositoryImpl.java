@@ -45,4 +45,9 @@ public class ComentarioRepositoryImpl implements ComentarioRepository {
         return comentarioDAO.criar(comentario, denunciaId);
     }
 
+    @Override
+    public Resultado getByDenuncia(int id) {
+        return comentarioDAO.getByDenunciaId(id);
+    }
+
 }

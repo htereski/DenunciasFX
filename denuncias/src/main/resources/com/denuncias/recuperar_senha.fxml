@@ -34,6 +34,7 @@
 
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressIndicator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -41,6 +42,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.denuncias.controllers.RecuperarSenha">
     <children>
@@ -64,5 +66,10 @@
             <ProgressIndicator fx:id="progressIndicator" visible="false" />
          </children>
       </StackPane>
+      <Label layoutX="48.0" layoutY="208.0" text="Digite o email da sua conta que deseja recuperar">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

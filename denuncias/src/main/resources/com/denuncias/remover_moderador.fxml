@@ -32,33 +32,33 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressIndicator?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.denuncias.controllers.Cadastrar">
-   <children>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="92.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@img/denuncias.png" />
-         </image>
-      </ImageView>
-      <TextField fx:id="tfNome" layoutX="34.0" layoutY="234.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="28.0" prefWidth="268.0" promptText="Nome" />
-      <PasswordField fx:id="pfSenha" layoutX="34.0" layoutY="324.0" prefHeight="26.0" prefWidth="268.0" promptText="Senha" />
-      <Button layoutX="34.0" layoutY="415.0" mnemonicParsing="false" onAction="#confirmar" prefHeight="40.0" prefWidth="268.0" text="CADASTRAR" textAlignment="CENTER" />
-      <TextField fx:id="tfEmail" layoutX="34.0" layoutY="279.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="28.0" prefWidth="268.0" promptText="Email" />
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.denuncias.controllers.RemoverModerador">
+    <children>
+      <Button layoutX="34.0" layoutY="451.0" mnemonicParsing="false" onAction="#remover" prefHeight="40.0" prefWidth="266.0" text="REMOVER" textAlignment="CENTER">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="60.0" layoutY="540.0" stroke="DODGERBLUE" strokeType="INSIDE" width="335.0" />
-      <Button layoutX="51.0" layoutY="555.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" textAlignment="CENTER" textFill="DODGERBLUE" />
-      <Label layoutX="31.0" layoutY="367.0" text="A senha deve possuir entre 8 e no máximo 20 caracteres.">
-         <font>
-            <Font size="11.0" />
-         </font>
-      </Label>
-   </children>
+      <Button layoutX="51.0" layoutY="554.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" textAlignment="CENTER" textFill="DODGERBLUE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <ListView fx:id="lstModeradores" layoutX="34.0" layoutY="76.0" prefHeight="335.0" prefWidth="266.0" />
+      <Label layoutX="131.0" layoutY="32.0" text="Moderadores" />
+      <StackPane fx:id="pane" disable="true" layoutX="67.0" layoutY="169.0" prefHeight="150.0" prefWidth="200.0" visible="false">
+         <children>
+            <ProgressIndicator fx:id="progressIndicator" disable="true" visible="false" />
+         </children>
+      </StackPane>
+    </children>
 </AnchorPane>

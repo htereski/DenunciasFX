@@ -56,7 +56,8 @@ public class DenunciaRepositoryImpl implements DenunciaRepository {
             return Resultado.erro("Data inválida");
         }
 
-        if (hora == null || hora.isAfter(LocalTime.now())) {
+        if (hora == null || (hora.isAfter(LocalTime.now()) && data.isAfter(LocalDate.now()))
+                || (hora.isAfter(LocalTime.now()) && data.compareTo(LocalDate.now()) == 0)) {
             return Resultado.erro("Hora inválida");
         }
 
@@ -79,7 +80,27 @@ public class DenunciaRepositoryImpl implements DenunciaRepository {
 
     @Override
     public Resultado abertas() {
-        return denunciaDAO.getAbertas();
+        Resultado r1 = denunciaDAO.getAbertas();
+
+        if (r1.foiErro()) {
+            return Resultado.erro(r1.getMsg());
+        }
+
+        List<Denuncia> denuncias = (List) r1.comoSucesso().getObj();
+
+        for (Denuncia denuncia : denuncias) {
+            Resultado r2 = comentarioDAO.getByDenunciaId(denuncia.getId());
+
+            if (r2.foiErro()) {
+                return Resultado.erro(r2.getMsg());
+            }
+
+            List<Comentario> comentarios = (List) r2.comoSucesso().getObj();
+
+            denuncia.setComentarios(comentarios);
+        }
+
+        return Resultado.sucesso("Denuncias", denuncias);
     }
 
     @Override
@@ -91,17 +112,7 @@ public class DenunciaRepositoryImpl implements DenunciaRepository {
             return Resultado.erro(r1.getMsg());
         }
 
-        List<Denuncia> denuncias;
-
-        if (r1.foiSucesso()) {
-            denuncias = (List) r1.comoSucesso().getObj();
-
-            if (denuncias.size() == 0) {
-                return Resultado.erro("Nenhuma denúncia registrada!");
-            }
-        }
-
-        denuncias = (List) r1.comoSucesso().getObj();
+        List<Denuncia> denuncias = (List) r1.comoSucesso().getObj();
 
         Resultado r2 = usuarioDAO.getById(usuarioId);
 

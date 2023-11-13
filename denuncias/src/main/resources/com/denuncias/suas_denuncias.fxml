@@ -53,12 +53,13 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Label layoutX="137.0" layoutY="37.0" text="Denúncias" />
-      <ListView fx:id="lstDenuncias" layoutX="68.0" layoutY="83.0" prefHeight="333.0" prefWidth="200.0" />
+      <Label layoutX="140.0" layoutY="31.0" text="Denúncias" />
+      <ListView fx:id="lstDenuncias" layoutX="35.0" layoutY="76.0" prefHeight="335.0" prefWidth="266.0" />
       <StackPane fx:id="pane" disable="true" layoutX="67.0" layoutY="175.0" prefHeight="150.0" prefWidth="200.0" visible="false">
          <children>
             <ProgressIndicator fx:id="progressIndicator" disable="true" visible="false" />
          </children>
       </StackPane>
+      <Label layoutX="143.0" layoutY="57.0" prefHeight="18.0" prefWidth="48.0" text="ID, Título" />
     </children>
 </AnchorPane>

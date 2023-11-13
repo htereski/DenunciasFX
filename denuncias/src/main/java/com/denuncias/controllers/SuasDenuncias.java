@@ -15,10 +15,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.ProgressIndicator;
+import javafx.scene.control.Tooltip;
 import javafx.scene.layout.StackPane;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ListCell;
 
 public class SuasDenuncias implements Initializable {
 
@@ -72,7 +75,6 @@ public class SuasDenuncias implements Initializable {
         };
 
         taskObterDenuncias.setOnSucceeded(e -> {
-            Resultado resultado = taskObterDenuncias.getValue();
 
             pane.setDisable(true);
             pane.setVisible(false);
@@ -80,6 +82,8 @@ public class SuasDenuncias implements Initializable {
             progressIndicator.setDisable(true);
             lstDenuncias.setVisible(true);
             lstDenuncias.setDisable(false);
+
+            Resultado resultado = taskObterDenuncias.getValue();
 
             if (resultado.foiErro()) {
                 Alert alert = new Alert(AlertType.INFORMATION, resultado.getMsg());
@@ -90,12 +94,31 @@ public class SuasDenuncias implements Initializable {
             List<Denuncia> denuncias = (List) resultado.comoSucesso().getObj();
 
             if (denuncias.size() > 0) {
-                for (Denuncia denuncia : denuncias) {
-                    lstDenuncias.getItems().add(denuncia);
-                }
-            } else {
-                Alert alert = new Alert(AlertType.INFORMATION, "Você não possui denúncias registradas!");
-                alert.showAndWait();
+                lstDenuncias.setCellFactory(cell -> new ListCell<Denuncia>() {
+
+                    final Tooltip tooltip = new Tooltip();
+
+                    @Override
+                    protected void updateItem(Denuncia item, boolean empty) {
+                        super.updateItem(item, empty);
+
+                        if (item == null || empty) {
+                            setText(null);
+                            setTooltip(null);
+                        } else {
+                            setText(item.getId() + " | " + item.toString());
+
+                            tooltip.setText(item.getId() + " | " + item.toString());
+                            setTooltip(tooltip);
+                        }
+                    }
+                });
+
+                lstDenuncias.getItems().addAll(denuncias);
+            }
+
+            else {
+                lstDenuncias.setPlaceholder(new Label("Você não possui denúncias registradas!"));
             }
         });
 
