@@ -14,6 +14,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Tooltip;
+import javafx.scene.input.MouseEvent;
 
 public class DenunciaDetalhada implements Initializable {
 
@@ -51,7 +52,7 @@ public class DenunciaDetalhada implements Initializable {
     }
 
     @FXML
-    void voltar(ActionEvent event) {
+    void voltar(MouseEvent event) {
         App.popScreen();
     }
 

@@ -20,6 +20,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.Tooltip;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 
 public class RemoverModerador implements Initializable {
@@ -104,7 +105,7 @@ public class RemoverModerador implements Initializable {
     }
 
     @FXML
-    void voltar(ActionEvent event) {
+    void voltar(MouseEvent event) {
         App.popScreen();
     }
 

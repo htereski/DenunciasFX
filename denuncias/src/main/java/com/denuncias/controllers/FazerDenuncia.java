@@ -24,6 +24,7 @@ import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import jfxtras.scene.control.LocalTimePicker;
@@ -84,8 +85,9 @@ public class FazerDenuncia implements Initializable {
 
         if (cbDenuncia.getSelectionModel().getSelectedItem() != null) {
 
-            String auxDenuncia = cbDenuncia.getSelectionModel().getSelectedItem().replace(' ', '_').replace('é', 'e').toUpperCase();
-            
+            String auxDenuncia = cbDenuncia.getSelectionModel().getSelectedItem().replace(' ', '_').replace('é', 'e')
+                    .toUpperCase();
+
             tipo = TipoDenuncia.valueOf(auxDenuncia);
         } else {
             tipo = null;
@@ -143,7 +145,7 @@ public class FazerDenuncia implements Initializable {
     }
 
     @FXML
-    void voltar(ActionEvent event) {
+    void voltar(MouseEvent event) {
         App.popScreen();
     }
 

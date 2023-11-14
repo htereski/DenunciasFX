@@ -34,3 +34,5 @@ CREATE TABLE IF NOT EXISTS comentarios (
   FOREIGN KEY (moderadorId) REFERENCES usuarios(id),
   FOREIGN KEY (denunciaId) REFERENCES denuncias(id)
 );
+
+INSERT INTO usuarios(nome, email, senha, tipo) VALUES('nome do admin aqui', 'admin@gmail.com', '12345678', 'ADMIN');

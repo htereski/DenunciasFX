@@ -21,6 +21,7 @@ import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.Tooltip;
 import javafx.scene.layout.StackPane;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.control.ListCell;
 
 public class SuasDenuncias implements Initializable {
@@ -58,7 +59,7 @@ public class SuasDenuncias implements Initializable {
     }
 
     @FXML
-    void voltar(ActionEvent event) {
+    void voltar(MouseEvent event) {
         App.popScreen();
     }
 

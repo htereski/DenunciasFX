@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.StackPane;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.ProgressIndicator;
 
@@ -96,7 +97,7 @@ public class TrocarSenha {
     }
 
     @FXML
-    void voltar(ActionEvent event) {
+    void voltar(MouseEvent event) {
         App.popScreen();
     }
 

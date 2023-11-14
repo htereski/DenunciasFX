@@ -51,25 +51,29 @@
                 <Image url="@img/denuncias.png" />
             </image>
         </ImageView>
-        <TextField fx:id="tfEmail" layoutX="34.0" layoutY="234.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="28.0" prefWidth="268.0" promptText="Email" />
-        <Button layoutX="34.0" layoutY="315.0" mnemonicParsing="false" onAction="#enviarEmail" prefHeight="40.0" prefWidth="268.0" styleClass="btn" text="ENVIAR E-MAIL" textAlignment="CENTER">
+        <TextField fx:id="tfEmail" layoutX="34.0" layoutY="312.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="28.0" prefWidth="268.0" promptText="Email" />
+        <Button layoutX="34.0" layoutY="402.0" mnemonicParsing="false" onAction="#enviarEmail" prefHeight="40.0" prefWidth="268.0" styleClass="btn" text="ENVIAR E-MAIL" textAlignment="CENTER">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="60.0" layoutY="540.0" stroke="DODGERBLUE" strokeType="INSIDE" width="335.0" />
-      <Button layoutX="51.0" layoutY="554.0" mnemonicParsing="false" onAction="#voltar" styleClass="voltar" text="Voltar" textAlignment="CENTER" textFill="DODGERBLUE">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor></Button>
       <StackPane fx:id="pane" disable="true" layoutX="68.0" layoutY="164.0" prefHeight="162.0" prefWidth="200.0" visible="false">
          <children>
             <ProgressIndicator fx:id="progressIndicator" visible="false" />
          </children>
       </StackPane>
-      <Label layoutX="23.0" layoutY="207.0" text="Digite o email da sua conta que deseja recuperar">
+      <Label fx:id="lbSenha" layoutX="49.0" layoutY="272.0" styleClass="texto" text="Digite o email da sua conta que deseja recuperar">
          <font>
             <Font size="11.0" />
          </font>
       </Label>
+      <ImageView fitHeight="34.0" fitWidth="28.0" layoutX="67.0" layoutY="556.0" onMouseClicked="#voltar" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/icons8-left-arrow-50.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
     </children>
 </AnchorPane>

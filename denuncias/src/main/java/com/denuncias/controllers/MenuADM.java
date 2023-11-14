@@ -14,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
+import javafx.scene.input.MouseEvent;
 
 public class MenuADM {
 
@@ -57,7 +58,7 @@ public class MenuADM {
     }
 
     @FXML
-    void fechar(ActionEvent event) {
+    void sair(MouseEvent event) {
         Alert alert = new Alert(AlertType.CONFIRMATION);
         alert.setTitle("Confirmação");
         alert.setHeaderText("Você deseja mesmo sair da conta?");

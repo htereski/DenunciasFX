@@ -58,14 +58,18 @@
          </cursor></Button>
       <TextField fx:id="tfEmail" layoutX="34.0" layoutY="279.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="28.0" prefWidth="268.0" promptText="Email" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="60.0" layoutY="540.0" stroke="DODGERBLUE" strokeType="INSIDE" width="335.0" />
-      <Button layoutX="51.0" layoutY="555.0" mnemonicParsing="false" onAction="#voltar" styleClass="voltar" text="Voltar" textFill="DODGERBLUE">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor></Button>
-      <Label layoutX="30.0" layoutY="371.0" text="A senha deve possuir entre 8 e no máximo 20 caracteres." textAlignment="CENTER">
+      <Label layoutX="30.0" layoutY="371.0" styleClass="texto" text="A senha deve possuir entre 8 e no máximo 20 caracteres." textAlignment="CENTER">
          <font>
             <Font size="11.0" />
          </font>
       </Label>
+      <ImageView fitHeight="34.0" fitWidth="28.0" layoutX="67.0" layoutY="556.0" onMouseClicked="#voltar" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/icons8-left-arrow-50.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
    </children>
 </AnchorPane>

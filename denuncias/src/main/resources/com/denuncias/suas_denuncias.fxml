@@ -37,29 +37,39 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.denuncias.controllers.SuasDenuncias">
     <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="60.0" layoutY="540.0" stroke="DODGERBLUE" strokeType="INSIDE" width="335.0" />
-      <Button layoutX="51.0" layoutY="554.0" mnemonicParsing="false" onAction="#voltar" styleClass="voltar" text="Voltar" textAlignment="CENTER" textFill="DODGERBLUE">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor></Button>
       <Button layoutX="34.0" layoutY="450.0" mnemonicParsing="false" onAction="#detalhes" prefHeight="40.0" prefWidth="266.0" styleClass="btn" text="MOSTRAR DENÚNCIA DETALHADA" textAlignment="CENTER">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Label layoutX="140.0" layoutY="31.0" text="Denúncias" />
-      <ListView fx:id="lstDenuncias" layoutX="35.0" layoutY="76.0" prefHeight="335.0" prefWidth="266.0" styleClass="fundoClaro" />
+      <Label layoutX="124.0" layoutY="29.0" styleClass="labels" text="Denúncias">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <ListView fx:id="lstDenuncias" layoutX="35.0" layoutY="76.0" prefHeight="335.0" prefWidth="266.0" styleClass="labels" />
       <StackPane fx:id="pane" disable="true" layoutX="67.0" layoutY="175.0" prefHeight="150.0" prefWidth="200.0" visible="false">
          <children>
-            <ProgressIndicator fx:id="progressIndicator" disable="true" visible="false" />
+            <ProgressIndicator fx:id="progressIndicator" disable="true" styleClass="segment" visible="false" />
          </children>
       </StackPane>
-      <Label layoutX="143.0" layoutY="57.0" prefHeight="18.0" prefWidth="48.0" text="ID, Título" />
+      <Label layoutX="139.0" layoutY="57.0" prefHeight="18.0" prefWidth="57.0" styleClass="labels" text="ID | Título" />
+      <ImageView fitHeight="34.0" fitWidth="28.0" layoutX="67.0" layoutY="556.0" onMouseClicked="#voltar" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/icons8-left-arrow-50.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
     </children>
 </AnchorPane>

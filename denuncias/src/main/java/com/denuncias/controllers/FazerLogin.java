@@ -123,10 +123,9 @@ public class FazerLogin {
     void recuperarSenha(MouseEvent event) {
         App.pushScreen("RECUPERARSENHA", o -> new RecuperarSenha(usuarioRepository));
     }
-
+    
     @FXML
-    void fechar(ActionEvent event) {
-
+    void fechar(MouseEvent event) {
         Alert alert = new Alert(AlertType.CONFIRMATION);
         alert.setTitle("Confirmação");
         alert.setHeaderText("Você deseja mesmo sair da aplicação?");
@@ -141,7 +140,6 @@ public class FazerLogin {
         if (result.isPresent() && result.get() == simButton) {
             System.exit(0);
         }
-
     }
 
 }

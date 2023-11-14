@@ -1,9 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-* {
-  
-}
-
 .btn {
   -fx-background-color: #263f70;
   -fx-background-radius: 5px;
@@ -13,7 +9,7 @@
 }
 
 .btn:hover {
-    -fx-background-color: rgb(11, 41, 100)
+  -fx-background-color: rgb(11, 41, 100);
 }
 
 .voltar {
@@ -24,5 +20,19 @@
 }
 
 .fundoClaro {
-    -fx-background-color: white;
+  -fx-background-color: white;
+}
+
+.labels {
+  -fx-font-family: "Heebo", sans-serif;
+  -fx-text-fill: rgb(11, 41, 100);
+  -fx-font-weight: bold;
+}
+
+.texto {
+  -fx-text-fill: rgb(11, 41, 100);
+}
+
+.progress-indicator:indeterminate .segment {
+  -fx-background-color: #AE1919;
 }

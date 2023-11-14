@@ -4,16 +4,17 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import com.denuncias.utils.Env;
+
 public class FabricaConexoes {
 
     private static int MAX_CONNECTIONS = 5;
-    private final String HOST = "localhost";
-    private final String PORT = "3306";
-    private final String DB_NAME = "test"; 
-    private final String USER = "root"; 
-    private final String PASSWORD = ""; 
+    private final String URL_DB;
+    private final String DB_NAME;
+    private final String USER;
+    private final String PASSWORD;
 
-    private final String CON_STRING = "jdbc:mysql://" + HOST + ":" + PORT + "/" + DB_NAME;
+    private final String CON_STRING;
 
     private Connection[] conexoes;
 
@@ -21,6 +22,11 @@ public class FabricaConexoes {
 
     private FabricaConexoes() {
         conexoes = new Connection[MAX_CONNECTIONS];
+        URL_DB = Env.get("URL_DB");
+        DB_NAME = Env.get("DB_NAME");
+        CON_STRING = URL_DB + "/" + DB_NAME;
+        USER = Env.get("DB_USER");
+        PASSWORD = Env.get("DB_PASSWORD");
     }
 
     public static FabricaConexoes getInstance() {

@@ -59,14 +59,18 @@
          </children>
       </Group>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="60.0" layoutY="540.0" stroke="DODGERBLUE" strokeType="INSIDE" width="335.0" />
-      <Button layoutX="51.0" layoutY="554.0" mnemonicParsing="false" onAction="#fechar" styleClass="voltar" text="Sair" textAlignment="CENTER" textFill="DODGERBLUE">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor></Button>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="92.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/denuncias.png" />
          </image>
+      </ImageView>
+      <ImageView fitHeight="34.0" fitWidth="28.0" layoutX="67.0" layoutY="556.0" onMouseClicked="#sair" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/icons8-left-arrow-50.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
     </children>
 </AnchorPane>

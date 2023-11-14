@@ -8,12 +8,17 @@ import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.input.MouseEvent;
 
 public class RecuperarSenha {
+
+    @FXML
+    private Label lbSenha;
 
     @FXML
     private StackPane pane;
@@ -50,6 +55,7 @@ public class RecuperarSenha {
 
         taskEmail.setOnSucceeded(e -> {
 
+            lbSenha.setVisible(true);
             progressIndicator.setVisible(false);
             tfEmail.setVisible(true);
             pane.setVisible(false);
@@ -71,6 +77,7 @@ public class RecuperarSenha {
         pane.setDisable(false);
         progressIndicator.setVisible(true);
         tfEmail.setVisible(false);
+        lbSenha.setVisible(false);
 
         Thread thread = new Thread(taskEmail);
         thread.setDaemon(true);
@@ -78,7 +85,7 @@ public class RecuperarSenha {
     }
 
     @FXML
-    void voltar(ActionEvent event) {
+    void voltar(MouseEvent event) {
         App.popScreen();
     }
 
