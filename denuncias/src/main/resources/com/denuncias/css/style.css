@@ -36,3 +36,16 @@
 .progress-indicator:indeterminate .segment {
   -fx-background-color: #AE1919;
 }
+
+.text-field-default {
+  -fx-text-box-border: #263f70;
+}
+
+.text-field-focused {
+  -fx-focus-color: rgb(11, 41, 100);
+}
+
+.list-view-selected {
+  -fx-control-inner-background: white;
+  -fx-selection-bar: #263f70;
+}

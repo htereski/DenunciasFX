@@ -89,6 +89,9 @@
          <styleClass>
             <String fx:value="fundoClaro" />
             <String fx:value="labels" />
+            <String fx:value="text-field-default" />
+            <String fx:value="text-field-focused" />
+            <String fx:value="list-view-selected" />
          </styleClass></ListView>
       <ImageView fitHeight="34.0" fitWidth="28.0" layoutX="67.0" layoutY="556.0" onMouseClicked="#voltar" pickOnBounds="true" preserveRatio="true">
          <image>

@@ -77,6 +77,10 @@ public class RemoverModerador implements Initializable {
             } else {
                 alert = new Alert(AlertType.CONFIRMATION, resultado.getMsg());
                 lstModeradores.getItems().remove(moderador);
+
+                if (lstModeradores.getItems().size() == 0) {
+                    lstModeradores.setPlaceholder(new Label("Nenhum moderador encontrado!"));
+                }
             }
             alert.showAndWait();
         });

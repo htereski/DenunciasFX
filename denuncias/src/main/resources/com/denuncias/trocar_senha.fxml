@@ -32,6 +32,7 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<?import java.lang.String?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.PasswordField?>
@@ -60,8 +61,16 @@
             <ProgressIndicator fx:id="progressIndicator" disable="true" visible="false" />
          </children>
       </StackPane>
-      <PasswordField fx:id="pfSenhaAtual" layoutX="34.0" layoutY="262.0" prefWidth="266.0" promptText="Senha atual" />
-      <PasswordField fx:id="pfNovaSenha" layoutX="34.0" layoutY="311.0" prefWidth="266.0" promptText="Nova senha" />
+      <PasswordField fx:id="pfSenhaAtual" layoutX="34.0" layoutY="262.0" prefWidth="266.0" promptText="Senha atual">
+         <styleClass>
+            <String fx:value="text-field-default" />
+            <String fx:value="text-field-focused" />
+         </styleClass></PasswordField>
+      <PasswordField fx:id="pfNovaSenha" layoutX="34.0" layoutY="311.0" prefWidth="266.0" promptText="Nova senha">
+         <styleClass>
+            <String fx:value="text-field-default" />
+            <String fx:value="text-field-focused" />
+         </styleClass></PasswordField>
       <ImageView fitHeight="34.0" fitWidth="28.0" layoutX="67.0" layoutY="556.0" onMouseClicked="#voltar" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/icons8-left-arrow-50.png" />

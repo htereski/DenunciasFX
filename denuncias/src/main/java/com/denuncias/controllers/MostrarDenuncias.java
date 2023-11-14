@@ -157,8 +157,7 @@ public class MostrarDenuncias implements Initializable {
                     });
 
                     lstDenuncias.getItems().addAll(denuncias);
-                }
-                else {
+                } else {
                     lstDenuncias.setPlaceholder(new Label("Nenhuma denúncia no momento!"));
                 }
 

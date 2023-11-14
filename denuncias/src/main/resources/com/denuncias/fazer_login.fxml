@@ -32,6 +32,7 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<?import java.lang.String?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -51,8 +52,16 @@
                 <Image url="@img/denuncias.png" />
             </image>
         </ImageView>
-        <TextField fx:id="tfEmail" layoutX="34.0" layoutY="234.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="28.0" prefWidth="268.0" promptText="Email" />
-        <PasswordField fx:id="pfSenha" layoutX="34.0" layoutY="287.0" prefHeight="26.0" prefWidth="268.0" promptText="Senha" />
+        <TextField fx:id="tfEmail" layoutX="34.0" layoutY="234.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="28.0" prefWidth="268.0" promptText="Email">
+         <styleClass>
+            <String fx:value="text-field-focused" />
+            <String fx:value="text-field-default" />
+         </styleClass></TextField>
+        <PasswordField fx:id="pfSenha" layoutX="34.0" layoutY="287.0" prefHeight="26.0" prefWidth="268.0" promptText="Senha">
+         <styleClass>
+            <String fx:value="text-field-focused" />
+            <String fx:value="text-field-default" />
+         </styleClass></PasswordField>
         <Button layoutX="34.0" layoutY="387.0" mnemonicParsing="false" onAction="#autentificar" prefHeight="40.0" prefWidth="268.0" styleClass="btn" text="ENTRAR" textAlignment="CENTER">
          <cursor>
             <Cursor fx:constant="HAND" />

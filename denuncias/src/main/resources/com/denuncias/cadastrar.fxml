@@ -32,6 +32,7 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<?import java.lang.String?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -50,13 +51,25 @@
             <Image url="@img/denuncias.png" />
          </image>
       </ImageView>
-      <TextField fx:id="tfNome" layoutX="34.0" layoutY="234.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="28.0" prefWidth="268.0" promptText="Nome" />
-      <PasswordField fx:id="pfSenha" layoutX="34.0" layoutY="324.0" prefHeight="26.0" prefWidth="268.0" promptText="Senha" />
+      <TextField fx:id="tfNome" layoutX="34.0" layoutY="234.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="28.0" prefWidth="268.0" promptText="Nome">
+         <styleClass>
+            <String fx:value="text-field-default" />
+            <String fx:value="text-field-focused" />
+         </styleClass></TextField>
+      <PasswordField fx:id="pfSenha" layoutX="34.0" layoutY="324.0" prefHeight="26.0" prefWidth="268.0" promptText="Senha">
+         <styleClass>
+            <String fx:value="text-field-default" />
+            <String fx:value="text-field-focused" />
+         </styleClass></PasswordField>
       <Button layoutX="34.0" layoutY="415.0" mnemonicParsing="false" onAction="#confirmar" prefHeight="40.0" prefWidth="268.0" styleClass="btn" text="CADASTRAR" textAlignment="CENTER">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <TextField fx:id="tfEmail" layoutX="34.0" layoutY="279.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="28.0" prefWidth="268.0" promptText="Email" />
+      <TextField fx:id="tfEmail" layoutX="34.0" layoutY="279.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="28.0" prefWidth="268.0" promptText="Email">
+         <styleClass>
+            <String fx:value="text-field-default" />
+            <String fx:value="text-field-focused" />
+         </styleClass></TextField>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="60.0" layoutY="540.0" stroke="DODGERBLUE" strokeType="INSIDE" width="335.0" />
       <Label layoutX="30.0" layoutY="371.0" styleClass="texto" text="A senha deve possuir entre 8 e no máximo 20 caracteres." textAlignment="CENTER">
          <font>
