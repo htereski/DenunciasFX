@@ -89,7 +89,7 @@
             <ProgressIndicator fx:id="progressIndicator" visible="false" />
          </children>
       </StackPane>
-      <Label fx:id="lbHora" layoutX="40.0" layoutY="287.0" styleClass="labels" text="Hora *" />
+      <Label fx:id="lbHora" layoutX="40.0" layoutY="292.0" styleClass="labels" text="Hora *" />
       <ImageView fitHeight="34.0" fitWidth="28.0" layoutX="67.0" layoutY="556.0" onMouseClicked="#voltar" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/icons8-left-arrow-50.png" />
