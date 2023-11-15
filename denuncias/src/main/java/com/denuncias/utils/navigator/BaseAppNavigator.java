@@ -51,6 +51,7 @@ public abstract class BaseAppNavigator extends Application {
         this.palco = primaryStage;
 
         this.palco.initStyle(StageStyle.TRANSPARENT);
+        this.root.setStyle("-fx-background-radius: 10px;");
 
         atualizaEstilo();
 

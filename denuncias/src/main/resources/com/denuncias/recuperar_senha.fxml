@@ -61,8 +61,8 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="60.0" layoutY="540.0" stroke="DODGERBLUE" strokeType="INSIDE" width="335.0" />
-      <StackPane fx:id="pane" disable="true" layoutX="68.0" layoutY="164.0" prefHeight="162.0" prefWidth="200.0" visible="false">
+      <Rectangle fill="DODGERBLUE" height="60.0" layoutY="540.0" stroke="DODGERBLUE" strokeType="INSIDE" width="335.0" />
+      <StackPane fx:id="pane" disable="true" layoutX="68.0" layoutY="230.0" prefHeight="162.0" prefWidth="200.0" visible="false">
          <children>
             <ProgressIndicator fx:id="progressIndicator" visible="false" />
          </children>

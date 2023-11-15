@@ -1,6 +1,7 @@
 package com.denuncias.controllers;
 
 import java.net.URL;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -63,6 +64,15 @@ public class MostrarDenuncias implements Initializable {
         Denuncia denuncia = lstDenuncias.getSelectionModel().getSelectedItem();
 
         if (denuncia != null) {
+
+            DateTimeFormatter formatterDate = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+            String formattedDate = denuncia.getData().format(formatterDate);
+
+            DateTimeFormatter formatterTime = DateTimeFormatter.ofPattern("HH:mm");
+
+            String formattedTime = denuncia.getHora().format(formatterTime);
+
             Alert alert = new Alert(AlertType.NONE);
 
             alert.setTitle("Detalhes");
@@ -72,8 +82,8 @@ public class MostrarDenuncias implements Initializable {
                     "Descrição: " + denuncia.getDescricao() + "\n" +
                     "Tipo: " + denuncia.getTipo().getDenuncia().replace('_', ' ') + "\n" +
                     "Status: " + denuncia.getStatus().getStatus() + "\n" +
-                    "Data: " + denuncia.getData() + "\n" +
-                    "Hora: " + denuncia.getHora());
+                    "Data: " + formattedDate + "\n" +
+                    "Hora: " + formattedTime);
 
             ButtonType simButton = new ButtonType("Sim");
             ButtonType naoButton = new ButtonType("Não");

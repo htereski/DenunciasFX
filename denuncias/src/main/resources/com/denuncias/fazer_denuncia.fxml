@@ -32,6 +32,7 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<?import java.lang.String?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
@@ -49,23 +50,46 @@
 
 <AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.denuncias.controllers.FazerDenuncia">
     <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="60.0" layoutY="540.0" stroke="DODGERBLUE" strokeType="INSIDE" width="335.0" />
+      <Rectangle fill="DODGERBLUE" height="60.0" layoutY="540.0" stroke="DODGERBLUE" strokeType="INSIDE" width="335.0" />
       <Button layoutX="34.0" layoutY="450.0" mnemonicParsing="false" onAction="#confirmar" prefHeight="40.0" prefWidth="266.0" styleClass="btn" text="CONFIRMAR" textAlignment="CENTER">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <ComboBox fx:id="cbDenuncia" layoutX="34.0" layoutY="105.0" prefHeight="30.0" prefWidth="266.0" promptText="Selecione o tipo do incidente *" styleClass="labels" />
-      <TextField fx:id="tfLocal" layoutX="34.0" layoutY="185.0" prefHeight="30.0" prefWidth="266.0" promptText="Local *" />
-      <TextField fx:id="tfTitulo" layoutX="34.0" layoutY="145.0" prefHeight="30.0" prefWidth="266.0" promptText="Titulo *" />
-      <DatePicker fx:id="dpData" editable="false" layoutX="34.0" layoutY="225.0" prefHeight="30.0" prefWidth="266.0" promptText="Data *" />
-      <TextArea fx:id="taDescricao" layoutX="34.0" layoutY="305.0" prefHeight="99.0" prefWidth="266.0" promptText="Descrição do incidente *" />
+      <ComboBox fx:id="cbDenuncia" layoutX="34.0" layoutY="127.0" prefHeight="30.0" prefWidth="266.0">
+         <styleClass>
+            <String fx:value="labels" />
+            <String fx:value="text-field-focused" />
+            <String fx:value="combo-box" />
+            <String fx:value="list-view-selected" />
+         </styleClass></ComboBox>
+      <TextField fx:id="tfLocal" layoutX="34.0" layoutY="207.0" prefHeight="30.0" prefWidth="266.0" promptText="Local *">
+         <styleClass>
+            <String fx:value="text-field-default" />
+            <String fx:value="text-field-focused" />
+         </styleClass></TextField>
+      <TextField fx:id="tfTitulo" layoutX="34.0" layoutY="167.0" prefHeight="30.0" prefWidth="266.0" promptText="Titulo *">
+         <styleClass>
+            <String fx:value="text-field-default" />
+            <String fx:value="text-field-focused" />
+         </styleClass></TextField>
+      <DatePicker fx:id="dpData" editable="false" layoutX="34.0" layoutY="247.0" prefHeight="30.0" prefWidth="266.0" promptText="Data *">
+         <styleClass>
+            <String fx:value="list-view-selected" />
+            <String fx:value="styled-time-picker" />
+            <String fx:value="text-field-focused" />
+         </styleClass></DatePicker>
+      <TextArea fx:id="taDescricao" layoutX="34.0" layoutY="327.0" prefHeight="99.0" prefWidth="266.0" promptText="Descrição do incidente *">
+         <styleClass>
+            <String fx:value="text-field-default" />
+            <String fx:value="text-field-focused" />
+         </styleClass></TextArea>
       <StackPane fx:id="paneIndicator" disable="true" layoutX="76.0" layoutY="173.0" prefHeight="133.0" prefWidth="181.0" visible="false">
          <children>
             <ProgressIndicator fx:id="progressIndicator" visible="false" />
          </children>
       </StackPane>
-      <Label fx:id="lbHora" layoutX="40.0" layoutY="274.0" styleClass="labels" text="Hora *" />
+      <Label fx:id="lbHora" layoutX="40.0" layoutY="287.0" styleClass="labels" text="Hora *" />
       <ImageView fitHeight="34.0" fitWidth="28.0" layoutX="67.0" layoutY="556.0" onMouseClicked="#voltar" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/icons8-left-arrow-50.png" />
@@ -79,5 +103,11 @@
             <Font size="18.0" />
          </font>
       </Label>
+      <Label layoutX="54.0" layoutY="68.0" styleClass="texto" text="Forneça detalhes sobre o ocorrido logo abaixo">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="147.0" layoutY="102.0" styleClass="labels" text="Tipo *" />
     </children>
 </AnchorPane>

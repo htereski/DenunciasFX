@@ -1,13 +1,16 @@
 package com.denuncias.controllers;
 
+import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 
 import com.denuncias.App;
 import com.denuncias.models.entities.Comentario;
 import com.denuncias.models.entities.Denuncia;
+import com.denuncias.models.entities.TipoDenuncia;
 import com.denuncias.models.entities.TipoStatus;
 import com.denuncias.models.entities.Usuario;
 import com.denuncias.models.repositories.ComentarioRepository;
@@ -16,16 +19,21 @@ import com.github.hugoperlin.results.Resultado;
 import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.SplitMenuButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ComboBox;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.StackPane;
 
-public class InserirComentario {
+public class InserirComentario implements Initializable {
+
+    @FXML
+    private ComboBox<String> cbComentario;
 
     @FXML
     private MenuItem menuEnc;
@@ -69,6 +77,17 @@ public class InserirComentario {
         LocalDate data = LocalDate.now();
         LocalTime hora = LocalTime.now();
 
+        TipoStatus tipoStatus;
+
+        if (cbComentario.getSelectionModel().getSelectedItem() != null) {
+
+            String auxDenuncia = cbComentario.getSelectionModel().getSelectedItem().toUpperCase();
+
+            tipoStatus = TipoStatus.valueOf(auxDenuncia);
+        } else {
+            tipoStatus = null;
+        }
+
         Task<Resultado> taskEnviarComentario = new Task<Resultado>() {
 
             @Override
@@ -99,6 +118,7 @@ public class InserirComentario {
                 denuncia.setComentarios(c);
                 denuncia.setStatus(comentario.getStatus());
 
+                cbComentario.getItems().clear();
                 taComentario.clear();
             }
             alert.showAndWait();
@@ -129,19 +149,19 @@ public class InserirComentario {
     }
 
     @FXML
-    void opcaoEncerramento(ActionEvent event) {
-        menuComentario.setText(menuEnc.getText());
-        tipoStatus = TipoStatus.ENCERRADO;
-    }
-
-    @FXML
-    void opcaoInvestigativo(ActionEvent event) {
-        menuComentario.setText(menuInv.getText());
-        tipoStatus = TipoStatus.INVESTIGANDO;
-    }
-
-    @FXML
     void voltar(MouseEvent event) {
         App.popScreen();
+    }
+
+    @Override
+    public void initialize(URL arg0, ResourceBundle arg1) {
+        
+        for (TipoStatus tipoStatus : TipoStatus.values()) {
+            String status = tipoStatus.getStatus();
+            if (!status.equals("Registrado")) {
+                cbComentario.getItems().add(status);
+            }
+            
+        }
     }
 }

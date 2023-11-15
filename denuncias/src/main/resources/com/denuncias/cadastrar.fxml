@@ -70,7 +70,7 @@
             <String fx:value="text-field-default" />
             <String fx:value="text-field-focused" />
          </styleClass></TextField>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="60.0" layoutY="540.0" stroke="DODGERBLUE" strokeType="INSIDE" width="335.0" />
+      <Rectangle fill="DODGERBLUE" height="60.0" layoutY="540.0" stroke="DODGERBLUE" strokeType="INSIDE" width="335.0" />
       <Label layoutX="30.0" layoutY="371.0" styleClass="texto" text="A senha deve possuir entre 8 e no máximo 20 caracteres." textAlignment="CENTER">
          <font>
             <Font size="11.0" />

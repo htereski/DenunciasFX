@@ -49,3 +49,15 @@
   -fx-control-inner-background: white;
   -fx-selection-bar: #263f70;
 }
+
+.styled-time-picker {
+  -fx-border-color: #263f70;
+}
+
+.combo-box {
+  -fx-border-color: #263f70;
+}
+
+.combo-box .list-cell:selected {
+  -fx-text-fill: #263f70; 
+}

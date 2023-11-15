@@ -1,6 +1,9 @@
 package com.denuncias.controllers;
 
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 import com.denuncias.App;
@@ -59,6 +62,14 @@ public class DenunciaDetalhada implements Initializable {
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
 
+        DateTimeFormatter formatterDate = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+        String formattedDate = denuncia.getData().format(formatterDate);
+
+        DateTimeFormatter formatterTime = DateTimeFormatter.ofPattern("HH:mm");
+
+        String formattedTime = denuncia.getHora().format(formatterTime);
+
         lbTitulo.setText(denuncia.getTitulo());
         toolTitulo.setText(lbTitulo.getText());
 
@@ -66,8 +77,8 @@ public class DenunciaDetalhada implements Initializable {
         toolDetalhes.setText(lbDetalhes.getText());
 
         lbStatus.setText(denuncia.getStatus().getStatus());
-        lbData.setText(String.valueOf(denuncia.getData()));
-        lbHora.setText(String.valueOf(denuncia.getHora()));
+        lbData.setText(String.valueOf(formattedDate));
+        lbHora.setText(String.valueOf(formattedTime));
 
         lstComentarios.setCellFactory(cell -> new ListCell<String>() {
 
@@ -90,7 +101,15 @@ public class DenunciaDetalhada implements Initializable {
         });
 
         for (Comentario comentario : denuncia.getComentarios()) {
-            String conteudo = comentario.getConteudo() + " | " + comentario.getStatus().getStatus();
+
+            LocalDateTime localDateTime = LocalDateTime.of(comentario.getData(), comentario.getHora());
+
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+
+            String formattedDateTime = localDateTime.format(formatter);
+
+            String conteudo = comentario.getConteudo() + " | " + comentario.getStatus().getStatus() + " | " + formattedDateTime;
+            
             lstComentarios.getItems().add(conteudo);
         }
 

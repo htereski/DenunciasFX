@@ -47,7 +47,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.denuncias.controllers.SuasDenuncias">
     <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="60.0" layoutY="540.0" stroke="DODGERBLUE" strokeType="INSIDE" width="335.0" />
+      <Rectangle fill="DODGERBLUE" height="60.0" layoutY="540.0" stroke="DODGERBLUE" strokeType="INSIDE" width="335.0" />
       <Button layoutX="34.0" layoutY="450.0" mnemonicParsing="false" onAction="#detalhes" prefHeight="40.0" prefWidth="266.0" styleClass="btn" text="MOSTRAR DENÚNCIA DETALHADA" textAlignment="CENTER">
          <cursor>
             <Cursor fx:constant="HAND" />

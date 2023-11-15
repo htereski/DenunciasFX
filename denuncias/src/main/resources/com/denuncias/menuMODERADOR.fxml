@@ -54,7 +54,7 @@
                </cursor></Button>
          </children>
       </Group>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="60.0" layoutY="540.0" stroke="DODGERBLUE" strokeType="INSIDE" width="335.0" />
+      <Rectangle fill="DODGERBLUE" height="60.0" layoutY="540.0" stroke="DODGERBLUE" strokeType="INSIDE" width="335.0" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="92.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/denuncias.png" />

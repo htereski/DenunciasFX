@@ -20,16 +20,16 @@ public class ComentarioRepositoryImpl implements ComentarioRepository {
     @Override
     public Resultado cadastrar(String conteudo, Usuario moderador, TipoStatus status, LocalDate data, LocalTime hora, int denunciaId) {
 
+        if (status == null) {
+            return Resultado.erro("Status inválido!");
+        }
+
         if (conteudo.isBlank() || conteudo.isEmpty()) {
             return Resultado.erro("Comentário inválido!");
         }
 
         if (moderador == null) {
             return Resultado.erro("Moderador inválido!");
-        }
-
-        if (status == null) {
-            return Resultado.erro("Status inválido!");
         }
 
         if (data == null) {

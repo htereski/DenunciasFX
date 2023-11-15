@@ -159,7 +159,7 @@ public class FazerDenuncia implements Initializable {
 
         localTimePicker = new LocalTimePicker();
         localTimePicker.setLayoutX(100);
-        localTimePicker.setLayoutY(265);
+        localTimePicker.setLayoutY(287);
         anchor.getChildren().add(localTimePicker);
     }
 
