@@ -97,16 +97,7 @@ public class MostrarDenuncias implements Initializable {
 
             if (result.isPresent() && result.get() == simButton) {
                 App.pushScreen("INSERIRCOMENTARIO",
-                        o -> new InserirComentario(comentarioRepository, moderador, denuncia));
-
-                lstDenuncias.getItems().clear();
-
-                for (Denuncia d : denuncias) {
-                    if (d.getStatus().compareTo(TipoStatus.ENCERRADO) != 0) {
-                        lstDenuncias.getItems().add(d);
-                    }
-                }
-
+                        o -> new InserirComentario(comentarioRepository, moderador, denuncia, this));
             }
 
         }
@@ -118,7 +109,10 @@ public class MostrarDenuncias implements Initializable {
         App.popScreen();
     }
 
-    private void carregar() {
+    protected void carregar() {
+
+        lstDenuncias.getItems().clear();
+
         Task<Resultado> taskCarregarDenuncias = new Task<Resultado>() {
 
             @Override

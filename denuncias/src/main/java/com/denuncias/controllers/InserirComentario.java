@@ -59,12 +59,14 @@ public class InserirComentario implements Initializable {
 
     private Denuncia denuncia;
 
-    private TipoStatus tipoStatus;
+    private MostrarDenuncias mostrarDenuncias;
 
-    public InserirComentario(ComentarioRepository comentarioRepository, Usuario moderador, Denuncia denuncia) {
+    public InserirComentario(ComentarioRepository comentarioRepository, Usuario moderador, Denuncia denuncia,
+            MostrarDenuncias mostrarDenuncias) {
         this.comentarioRepository = comentarioRepository;
         this.moderador = moderador;
         this.denuncia = denuncia;
+        this.mostrarDenuncias = mostrarDenuncias;
     }
 
     public InserirComentario() {
@@ -150,18 +152,19 @@ public class InserirComentario implements Initializable {
 
     @FXML
     void voltar(MouseEvent event) {
+        mostrarDenuncias.carregar();
         App.popScreen();
     }
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        
+
         for (TipoStatus tipoStatus : TipoStatus.values()) {
             String status = tipoStatus.getStatus();
             if (!status.equals("Registrado")) {
                 cbComentario.getItems().add(status);
             }
-            
+
         }
     }
 }
