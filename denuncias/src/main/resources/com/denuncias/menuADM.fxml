@@ -42,7 +42,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.denuncias.controllers.MenuADM">
     <children>
-      <Group layoutX="34.0" layoutY="240.0">
+      <Group layoutX="34.0" layoutY="264.0">
          <children>
             <Button layoutY="150.0" mnemonicParsing="false" onAction="#alterarSenha" prefHeight="40.0" prefWidth="266.0" styleClass="btn" text="ALTERAR SENHA" textAlignment="CENTER">
                <cursor>
