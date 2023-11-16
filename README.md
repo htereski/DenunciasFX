@@ -1,6 +1,6 @@
 # denuncias
 
-## Para fazer o app funcionar é preciso criar um arquivo .env e configurar o arquivo init.sql com o seu email para e senha no INSERT
+## Para fazer o app funcionar é preciso criar um arquivo .env e configurar o arquivo init.sql com o seu email e senha para gerar um adm.
 
 ### Nesse arquivo precisa conter as seguintes chaves e valores
 
