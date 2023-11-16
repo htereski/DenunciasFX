@@ -47,6 +47,9 @@ public class FazerDenuncia implements Initializable {
     private TextArea taDescricao;
 
     @FXML
+    private Label lbTipo;
+
+    @FXML
     private Label lbHora;
 
     @FXML
@@ -107,6 +110,11 @@ public class FazerDenuncia implements Initializable {
             progressIndicator.setVisible(false);
             paneIndicator.setVisible(false);
 
+            lbTipo.setVisible(true);
+            taDescricao.setVisible(true);
+            cbDenuncia.setVisible(true);
+            tfTitulo.setVisible(true);
+            tfLocal.setVisible(true);
             lbHora.setVisible(true);
             tfLocal.setVisible(true);
             dpData.setVisible(true);
@@ -129,6 +137,11 @@ public class FazerDenuncia implements Initializable {
             alert.showAndWait();
         });
 
+        cbDenuncia.setVisible(false);
+        taDescricao.setVisible(false);
+        lbTipo.setVisible(false);
+        tfTitulo.setVisible(false);
+        tfLocal.setVisible(false);
         lbHora.setVisible(false);
         tfLocal.setVisible(false);
         dpData.setVisible(false);

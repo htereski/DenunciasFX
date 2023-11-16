@@ -1,5 +1,6 @@
 package com.denuncias.utils.navigator;
 
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -7,6 +8,7 @@ import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.StackPane;
@@ -52,7 +54,13 @@ public abstract class BaseAppNavigator extends Application {
 
         this.palco.initStyle(StageStyle.TRANSPARENT);
         this.root.setStyle("-fx-background-radius: 10px;");
+        /*
+        String path = "../../../../../resources/com/denuncias/img/denuncias.png";
 
+        Image image = new Image(path);
+
+        primaryStage.getIcons().add(image);
+         */
         atualizaEstilo();
 
         this.palco.setScene(cena);

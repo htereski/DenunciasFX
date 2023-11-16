@@ -108,6 +108,6 @@
             <Font size="11.0" />
          </font>
       </Label>
-      <Label layoutX="147.0" layoutY="102.0" styleClass="labels" text="Tipo *" />
+      <Label fx:id="lbTipo" layoutX="147.0" layoutY="102.0" styleClass="labels" text="Tipo *" />
     </children>
 </AnchorPane>
