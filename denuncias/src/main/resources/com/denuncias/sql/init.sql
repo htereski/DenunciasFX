@@ -35,6 +35,7 @@ CREATE TABLE IF NOT EXISTS comentarios (
   FOREIGN KEY (denunciaId) REFERENCES denuncias(id)
 );
 
+
 DELIMITER $$
 DROP TRIGGER IF EXISTS atualizarStatus $$
 CREATE TRIGGER atualizarStatus
@@ -44,6 +45,7 @@ BEGIN
 	UPDATE denuncias SET status = NEW.status WHERE denuncias.id=NEW.denunciaId;
 END $$
 DELIMITER ;
+
 
 DELIMITER $$
 DROP FUNCTION IF EXISTS padronizarNome $$
@@ -71,6 +73,7 @@ BEGIN
 END $$
 DELIMITER ;
 
+
 DELIMITER $$
 DROP TRIGGER IF EXISTS inserirNome $$
 CREATE TRIGGER inserirNome
@@ -83,6 +86,7 @@ BEGIN
 	SET NEW.nome = retorno;
 END $$
 DELIMITER ;
+
 
 DELIMITER $$
 DROP FUNCTION IF EXISTS validarGmail $$
@@ -111,6 +115,7 @@ BEGIN
 END $$
 DELIMITER ;
 
+
 DELIMITER $$
 DROP TRIGGER IF EXISTS validarEmail $$
 CREATE TRIGGER validarEmail
@@ -126,6 +131,7 @@ BEGIN
     END IF;
 END $$	
 DELIMITER ;
+
 
 DELIMITER $$
 DROP PROCEDURE IF EXISTS recuperarConta $$
@@ -146,6 +152,7 @@ BEGIN
 	END IF;
 END $$
 DELIMITER ;
+
 
 DELIMITER $$
 DROP PROCEDURE IF EXISTS trocarSenha $$
@@ -172,5 +179,6 @@ BEGIN
 	COMMIT;
 END $$
 DELIMITER ;
+
 
 INSERT INTO usuarios(nome, email, senha, tipo) VALUES('nome do admin aqui', 'admin@gmail.com', '12345678', 'ADMIN');
