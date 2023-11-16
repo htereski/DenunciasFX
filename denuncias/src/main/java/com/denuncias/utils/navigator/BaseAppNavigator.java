@@ -54,13 +54,6 @@ public abstract class BaseAppNavigator extends Application {
 
         this.palco.initStyle(StageStyle.TRANSPARENT);
         this.root.setStyle("-fx-background-radius: 10px;");
-        /*
-        String path = "../../../../../resources/com/denuncias/img/denuncias.png";
-
-        Image image = new Image(path);
-
-        primaryStage.getIcons().add(image);
-         */
         atualizaEstilo();
 
         this.palco.setScene(cena);
