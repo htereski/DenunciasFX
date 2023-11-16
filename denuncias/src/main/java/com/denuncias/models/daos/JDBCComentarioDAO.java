@@ -51,7 +51,7 @@ public class JDBCComentarioDAO implements ComentarioDAO {
 
             return Resultado.erro("Erro ao cadastrar comentário!");
         } catch (SQLException e) {
-            return Resultado.erro(e.getMessage());
+            return Resultado.erro("Não foi possível se conectar ao banco de dados.");
         }
     }
 
@@ -83,7 +83,7 @@ public class JDBCComentarioDAO implements ComentarioDAO {
 
             return Resultado.sucesso("Comentários", comentarios);
         } catch (SQLException e) {
-            return Resultado.erro(e.getMessage());
+            return Resultado.erro("Não foi possível se conectar ao banco de dados.");
         }
     }
 

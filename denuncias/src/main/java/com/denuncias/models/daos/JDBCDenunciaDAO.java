@@ -59,7 +59,7 @@ public class JDBCDenunciaDAO implements DenunciaDAO {
 
             return Resultado.erro("Erro ao cadastrar denúncia!");
         } catch (SQLException e) {
-            return Resultado.erro(e.getMessage());
+            return Resultado.erro("Não foi possível se conectar ao banco de dados.");
         }
     }
 
@@ -91,7 +91,7 @@ public class JDBCDenunciaDAO implements DenunciaDAO {
 
             return Resultado.erro("Denúncia não encontrada!");
         } catch (SQLException e) {
-            return Resultado.erro(e.getMessage());
+            return Resultado.erro("Não foi possível se conectar ao banco de dados.");
         }
     }
 
@@ -119,7 +119,7 @@ public class JDBCDenunciaDAO implements DenunciaDAO {
 
             return Resultado.sucesso("Denúncias abertas!", denuncias);
         } catch (SQLException e) {
-            return Resultado.erro(e.getMessage());
+            return Resultado.erro("Não foi possível se conectar ao banco de dados.");
         }
     }
 
@@ -150,7 +150,7 @@ public class JDBCDenunciaDAO implements DenunciaDAO {
 
             return Resultado.sucesso("Denúncias do usuário!", denuncias);
         } catch (SQLException e) {
-            return Resultado.erro(e.getMessage());
+            return Resultado.erro("Não foi possível se conectar ao banco de dados.");
         }
     }
 

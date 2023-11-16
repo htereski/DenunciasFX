@@ -53,7 +53,7 @@ public class TrocarSenha {
                 if (senhaAtual.equals(usuario.getSenha())) {
                     return usuarioRepository.alterarSenha(usuario.getId(), novaSenha);
                 }
-                return Resultado.erro("Senha errada!");
+                return Resultado.erro("Senha atual errada!");
             }
 
         };
@@ -77,6 +77,7 @@ public class TrocarSenha {
                 alert = new Alert(AlertType.ERROR, resultado.getMsg());
             } else {
                 alert = new Alert(AlertType.CONFIRMATION, resultado.getMsg());
+                usuario.setSenha(novaSenha);
                 pfSenhaAtual.clear();
                 pfNovaSenha.clear();
             }

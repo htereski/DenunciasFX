@@ -61,7 +61,7 @@ public class UsuarioRepositoryImpl implements UsuarioRepository {
     public Resultado alterarSenha(int id, String senha) {
         
         if (senha.isBlank() || senha.isEmpty() || senha.length() < 8 || senha.length() > 20) {
-            return Resultado.erro("Senha inválida!");
+            return Resultado.erro("Nova senha inválida!");
         }
 
         return usuarioDAO.alterarSenha(id, senha);

@@ -61,7 +61,7 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 
             return Resultado.erro("Email já cadastrado!");
         } catch (SQLException e) {
-            return Resultado.erro(e.getMessage());
+            return Resultado.erro("Não foi possível se conectar ao banco de dados.");
         }
     }
 
@@ -88,7 +88,7 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 
             return Resultado.sucesso("Moderadores", moderadores);
         } catch (SQLException e) {
-            return Resultado.erro(e.getMessage());
+            return Resultado.erro("Não foi possível se conectar ao banco de dados.");
         }
     }
 
@@ -114,7 +114,7 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 
             return Resultado.erro("Falha ao encontrar usuário!");
         } catch (SQLException e) {
-            return Resultado.erro(e.getMessage());
+            return Resultado.erro("Não foi possível se conectar ao banco de dados.");
         }
     }
 
@@ -134,7 +134,7 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 
             return Resultado.erro("Falha ao encontrar moderador!");
         } catch (SQLException e) {
-            return Resultado.erro(e.getMessage());
+            return Resultado.erro("Não foi possível se conectar ao banco de dados.");
         }
     }
 
@@ -154,7 +154,7 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 
             return Resultado.erro("Falha ao encontrar aluno!");
         } catch (SQLException e) {
-            return Resultado.erro(e.getMessage());
+            return Resultado.erro("Não foi possível se conectar ao banco de dados.");
         }
     }
 
@@ -180,7 +180,7 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 
             return Resultado.erro("Email ou senha inválidos!");
         } catch (SQLException e) {
-            return Resultado.erro(e.getMessage());
+            return Resultado.erro("Não foi possível se conectar ao banco de dados.");
         }
     }
 
@@ -204,7 +204,7 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 
             return Resultado.erro("Não foi possivel trocar a senha!");
         } catch (SQLException e) {
-            return Resultado.erro(e.getMessage());
+            return Resultado.erro("Não foi possível se conectar ao banco de dados.");
         }
     }
 
@@ -231,7 +231,7 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 
             return Resultado.sucesso("Conta recuperada!", usuario);
         } catch (SQLException e) {
-            return Resultado.erro(e.getMessage());
+            return Resultado.erro("Não foi possível se conectar ao banco de dados.");
         }
     }
 
@@ -251,7 +251,7 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 
             return Resultado.erro("Falha ao encontrar usuário!");
         } catch (SQLException e) {
-            return Resultado.erro(e.getMessage());
+            return Resultado.erro("Não foi possível se conectar ao banco de dados.");
         }
     }
 
