@@ -4,6 +4,7 @@
         "src/main": "src",
         "entities": "core",
         "repositories": "context",
-        "daos": "connection"
+        "daos": "connection",
+        "fxml": "views"
     }
 }
