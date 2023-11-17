@@ -1,8 +1,14 @@
-# denuncias
+# Projeto denuncias feito em javaFX
 
-## Para fazer o app funcionar é preciso criar um arquivo .env e configurar o arquivo init.sql com o seu email e senha para gerar um adm.
+## Visão geral
+A ideia desse projeto é fazer com que os alunos possam fazer denúncias sobre ocorridos dentro da escola, e se manter informados sobre o acontecido.
 
-### Nesse arquivo precisa conter as seguintes chaves e valores
+### Para dar o start
+Para fazer o App startar é preciso criar um arquivo .env e configurar o arquivo init.sql sobrescrevendo o INSERT que está lá.
+Só serão aceitos emails que pertençam ao domínio do Gmail.
+Não esqueça de configurar "aplicativos e serviços de terceiros" do Gmail para poder fazer o envio dos emails.
+
+### O arquivo .env precisa conter as seguintes chaves e valores
 
 #### URL_DB=sua_URL
 #### DB_NAME=nome_do_banco
