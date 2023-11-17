@@ -48,7 +48,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.denuncias.controllers.FazerDenuncia">
+<AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.denuncias.controllers.FazerDenuncia">
     <children>
       <Rectangle fill="DODGERBLUE" height="60.0" layoutY="540.0" stroke="DODGERBLUE" strokeType="INSIDE" width="335.0" />
       <Button layoutX="34.0" layoutY="450.0" mnemonicParsing="false" onAction="#confirmar" prefHeight="40.0" prefWidth="266.0" styleClass="btn" text="CONFIRMAR" textAlignment="CENTER">
@@ -92,7 +92,7 @@
       <Label fx:id="lbHora" layoutX="40.0" layoutY="292.0" styleClass="labels" text="Hora *" />
       <ImageView fitHeight="34.0" fitWidth="28.0" layoutX="67.0" layoutY="556.0" onMouseClicked="#voltar" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@img/icons8-left-arrow-50.png" />
+            <Image url="@../img/icons8-left-arrow-50.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />

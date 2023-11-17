@@ -32,41 +32,46 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<?import java.lang.String?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressIndicator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.denuncias.controllers.MenuALUNO">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.denuncias.controllers.RemoverModerador">
     <children>
-      <Group layoutX="35.0" layoutY="285.0">
-         <children>
-            <Button mnemonicParsing="false" onAction="#fazerDenuncia" prefHeight="40.0" prefWidth="266.0" styleClass="btn" text="FAZER DENÚNCIA" textAlignment="CENTER">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor></Button>
-            <Button layoutY="100.0" mnemonicParsing="false" onAction="#alterarSenha" prefHeight="40.0" prefWidth="266.0" styleClass="btn" text="ALTERAR SENHA" textAlignment="CENTER">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor></Button>
-            <Button layoutY="50.0" mnemonicParsing="false" onAction="#mostrarDenuncias" prefHeight="40.0" prefWidth="266.0" styleClass="btn" text="SUAS DENÚNCIAS" textAlignment="CENTER">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor></Button>
-         </children>
-      </Group>
+      <Button layoutX="34.0" layoutY="451.0" mnemonicParsing="false" onAction="#remover" prefHeight="40.0" prefWidth="266.0" styleClass="btn" text="REMOVER" textAlignment="CENTER">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
       <Rectangle fill="DODGERBLUE" height="60.0" layoutY="540.0" stroke="DODGERBLUE" strokeType="INSIDE" width="335.0" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="92.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+      <ListView fx:id="lstModeradores" layoutX="34.0" layoutY="76.0" prefHeight="335.0" prefWidth="266.0">
+         <styleClass>
+            <String fx:value="labels" />
+            <String fx:value="text-field-default" />
+            <String fx:value="text-field-focused" />
+            <String fx:value="list-view-selected" />
+         </styleClass></ListView>
+      <Label layoutX="110.0" layoutY="29.0" styleClass="labels" text="Moderadores">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <StackPane fx:id="pane" disable="true" layoutX="67.0" layoutY="169.0" prefHeight="150.0" prefWidth="200.0" visible="false">
+         <children>
+            <ProgressIndicator fx:id="progressIndicator" disable="true" visible="false" />
+         </children>
+      </StackPane>
+      <ImageView fitHeight="34.0" fitWidth="28.0" layoutX="67.0" layoutY="556.0" onMouseClicked="#voltar" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@img/denuncias.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="34.0" fitWidth="28.0" layoutX="67.0" layoutY="556.0" onMouseClicked="#sair" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@img/icons8-left-arrow-50.png" />
+            <Image url="@../img/icons8-left-arrow-50.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />

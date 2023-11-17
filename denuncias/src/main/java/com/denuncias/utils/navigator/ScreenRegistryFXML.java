@@ -22,7 +22,8 @@ public class ScreenRegistryFXML implements ScreenRegistry{
     }
 
     public Parent getRoot(){
-        return LoaderFXML.loadFxml(classe.getResource(fxml), controler);
+        String resourcePath = "/com/denuncias/fxml/" + fxml;
+        return LoaderFXML.loadFxml(classe.getResource(resourcePath), controler);
     }
     
 }

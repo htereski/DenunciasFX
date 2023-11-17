@@ -37,54 +37,57 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.denuncias.controllers.TrocarSenha">
-    <children>
-      <Button layoutX="34.0" layoutY="424.0" mnemonicParsing="false" onAction="#confirmar" prefHeight="40.0" prefWidth="266.0" styleClass="btn" text="CONFIRMAR" textAlignment="CENTER">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
-      <Rectangle fill="DODGERBLUE" height="60.0" layoutY="540.0" stroke="DODGERBLUE" strokeType="INSIDE" width="335.0" />
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.denuncias.controllers.Cadastrar">
+   <children>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="92.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@img/denuncias.png" />
+            <Image url="@../img/denuncias.png" />
          </image>
       </ImageView>
-      <StackPane fx:id="pane" disable="true" layoutX="67.0" layoutY="230.0" prefHeight="150.0" prefWidth="200.0" visible="false">
-         <children>
-            <ProgressIndicator fx:id="progressIndicator" disable="true" visible="false" />
-         </children>
-      </StackPane>
-      <PasswordField fx:id="pfSenhaAtual" layoutX="34.0" layoutY="262.0" prefWidth="266.0" promptText="Senha atual">
+      <TextField fx:id="tfNome" layoutX="34.0" layoutY="234.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="28.0" prefWidth="268.0" promptText="Nome">
+         <styleClass>
+            <String fx:value="text-field-default" />
+            <String fx:value="text-field-focused" />
+         </styleClass></TextField>
+      <PasswordField fx:id="pfSenha" layoutX="34.0" layoutY="324.0" prefHeight="26.0" prefWidth="268.0" promptText="Senha">
          <styleClass>
             <String fx:value="text-field-default" />
             <String fx:value="text-field-focused" />
          </styleClass></PasswordField>
-      <PasswordField fx:id="pfNovaSenha" layoutX="34.0" layoutY="311.0" prefWidth="266.0" promptText="Nova senha">
-         <styleClass>
-            <String fx:value="text-field-default" />
-            <String fx:value="text-field-focused" />
-         </styleClass></PasswordField>
-      <ImageView fitHeight="34.0" fitWidth="28.0" layoutX="67.0" layoutY="556.0" onMouseClicked="#voltar" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@img/icons8-left-arrow-50.png" />
-         </image>
+      <Button layoutX="34.0" layoutY="415.0" mnemonicParsing="false" onAction="#confirmar" prefHeight="40.0" prefWidth="268.0" styleClass="btn" text="CADASTRAR" textAlignment="CENTER">
          <cursor>
             <Cursor fx:constant="HAND" />
-         </cursor>
-      </ImageView>
-      <Label layoutX="30.0" layoutY="364.0" styleClass="texto" text="A senha deve possuir entre 8 e no máximo 20 caracteres." textAlignment="CENTER">
+         </cursor></Button>
+      <TextField fx:id="tfEmail" layoutX="34.0" layoutY="279.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="28.0" prefWidth="268.0" promptText="Email">
+         <styleClass>
+            <String fx:value="text-field-default" />
+            <String fx:value="text-field-focused" />
+         </styleClass></TextField>
+      <Rectangle fill="DODGERBLUE" height="60.0" layoutY="540.0" stroke="DODGERBLUE" strokeType="INSIDE" width="335.0" />
+      <Label layoutX="29.0" layoutY="384.0" styleClass="texto" text="A senha deve possuir entre 8 e no máximo 20 caracteres." textAlignment="CENTER">
          <font>
             <Font size="11.0" />
          </font>
       </Label>
-    </children>
+      <ImageView fitHeight="34.0" fitWidth="28.0" layoutX="67.0" layoutY="556.0" onMouseClicked="#voltar" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/icons8-left-arrow-50.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label layoutX="80.0" layoutY="368.0" styleClass="texto" text="O email deve ser do domínio Gmail." textAlignment="CENTER">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+   </children>
 </AnchorPane>
