@@ -39,7 +39,7 @@ public class MenuADM {
 
     @FXML
     void adicionarModerador(ActionEvent event) {
-        App.pushScreen("CADASTRAR", o -> new Cadastrar(usuarioRepository, TipoUsuario.MODERADOR));
+        App.pushScreen("CADASTRAR", o -> new Cadastrar(usuarioRepository, TipoUsuario.MODERADOR, null));
     }
 
     @FXML

@@ -28,9 +28,12 @@ public class Cadastrar {
 
     private TipoUsuario tipoUsuario;
 
-    public Cadastrar(UsuarioRepository usuarioRepository, TipoUsuario tipoUsuario) {
+    private FazerLogin fazerLogin;
+
+    public Cadastrar(UsuarioRepository usuarioRepository, TipoUsuario tipoUsuario, FazerLogin fazerLogin) {
         this.usuarioRepository = usuarioRepository;
         this.tipoUsuario = tipoUsuario;
+        this.fazerLogin = fazerLogin;
     }
 
     public Cadastrar() {
@@ -51,6 +54,9 @@ public class Cadastrar {
             alert = new Alert(AlertType.ERROR, resultado.getMsg());
         } else {
             alert = new Alert(AlertType.CONFIRMATION, resultado.getMsg());
+            if (tipoUsuario.compareTo(TipoUsuario.ALUNO) == 0) {
+                fazerLogin.pegarEmailCadastrado(email);
+            }
             tfNome.clear();
             tfEmail.clear();
             pfSenha.clear();

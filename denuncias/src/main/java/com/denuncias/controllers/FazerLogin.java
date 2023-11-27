@@ -53,6 +53,10 @@ public class FazerLogin {
         this.comentarioRepository = comentarioRepository;
     }
 
+    protected void pegarEmailCadastrado(String email) {
+        tfEmail.setText(email);
+    }
+
     @FXML
     void autentificar(ActionEvent event) {
 
@@ -116,14 +120,14 @@ public class FazerLogin {
 
     @FXML
     void cadastrar(ActionEvent event) {
-        App.pushScreen("CADASTRAR", o -> new Cadastrar(usuarioRepository, TipoUsuario.ALUNO));
+        App.pushScreen("CADASTRAR", o -> new Cadastrar(usuarioRepository, TipoUsuario.ALUNO, this));
     }
 
     @FXML
     void recuperarSenha(MouseEvent event) {
         App.pushScreen("RECUPERARSENHA", o -> new RecuperarSenha(usuarioRepository));
     }
-    
+
     @FXML
     void fechar(MouseEvent event) {
         Alert alert = new Alert(AlertType.CONFIRMATION);
