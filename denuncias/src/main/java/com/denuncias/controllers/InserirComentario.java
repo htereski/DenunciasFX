@@ -3,14 +3,12 @@ package com.denuncias.controllers;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
 import com.denuncias.App;
 import com.denuncias.models.entities.Comentario;
 import com.denuncias.models.entities.Denuncia;
-import com.denuncias.models.entities.TipoDenuncia;
 import com.denuncias.models.entities.TipoStatus;
 import com.denuncias.models.entities.Usuario;
 import com.denuncias.models.repositories.ComentarioRepository;

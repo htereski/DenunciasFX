@@ -1,7 +1,5 @@
 package com.denuncias.utils.navigator;
 
-import java.net.URL;
-
 import javafx.scene.Parent;
 import javafx.util.Callback;
 

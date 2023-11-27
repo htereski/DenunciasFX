@@ -8,7 +8,6 @@ import java.util.ResourceBundle;
 
 import com.denuncias.App;
 import com.denuncias.models.entities.Denuncia;
-import com.denuncias.models.entities.TipoStatus;
 import com.denuncias.models.entities.Usuario;
 import com.denuncias.models.repositories.ComentarioRepository;
 import com.denuncias.models.repositories.DenunciaRepository;

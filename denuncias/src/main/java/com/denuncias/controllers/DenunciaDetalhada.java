@@ -1,7 +1,6 @@
 package com.denuncias.controllers;
 
 import java.net.URL;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
@@ -10,7 +9,6 @@ import com.denuncias.App;
 import com.denuncias.models.entities.Comentario;
 import com.denuncias.models.entities.Denuncia;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
