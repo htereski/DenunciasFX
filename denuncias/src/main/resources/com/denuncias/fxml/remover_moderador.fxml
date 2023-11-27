@@ -77,5 +77,6 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
+      <Label layoutX="128.0" layoutY="56.0" prefHeight="18.0" prefWidth="77.0" styleClass="labels" text="Nome | Email" />
     </children>
 </AnchorPane>
