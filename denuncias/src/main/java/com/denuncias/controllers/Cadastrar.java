@@ -42,8 +42,8 @@ public class Cadastrar {
 
     @FXML
     void confirmar(ActionEvent event) {
-        String nome = tfNome.getText();
-        String email = tfEmail.getText();
+        String nome = tfNome.getText().trim();
+        String email = tfEmail.getText().trim();
         String senha = pfSenha.getText();
 
         Resultado resultado = usuarioRepository.cadastrar(nome, email, senha, tipoUsuario);

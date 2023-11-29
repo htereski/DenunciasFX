@@ -78,9 +78,9 @@ public class FazerDenuncia implements Initializable {
     @FXML
     void confirmar(ActionEvent event) {
 
-        String local = tfLocal.getText();
-        String titulo = tfTitulo.getText();
-        String descricao = taDescricao.getText();
+        String local = tfLocal.getText().trim();
+        String titulo = tfTitulo.getText().trim();
+        String descricao = taDescricao.getText().trim();
         LocalDate data = dpData.getValue();
         LocalTime hora = localTimePicker.getLocalTime();
 

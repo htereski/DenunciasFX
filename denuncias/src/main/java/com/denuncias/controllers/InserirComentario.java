@@ -73,7 +73,7 @@ public class InserirComentario implements Initializable {
     @FXML
     void enviar(ActionEvent event) {
 
-        String conteudo = taComentario.getText();
+        String conteudo = taComentario.getText().trim();
         LocalDate data = LocalDate.now();
         LocalTime hora = LocalTime.now();
 
