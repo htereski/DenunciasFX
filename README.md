@@ -19,3 +19,5 @@ Não esqueça de configurar "aplicativos e serviços de terceiros" do Gmail para
 
 #### EMAIL_USERNAME=seu@email.com
 #### EMAIL_PASSWORD=sua_senha
+
+## Vídeo demonstrativo: https://youtu.be/5WRR2sx7OL0
