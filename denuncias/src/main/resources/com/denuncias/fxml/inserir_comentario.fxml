@@ -59,7 +59,7 @@
             <ProgressIndicator fx:id="progressIndicator" disable="true" visible="false" />
          </children>
       </StackPane>
-      <TextArea fx:id="taComentario" layoutX="34.0" layoutY="177.0" prefHeight="246.0" prefWidth="266.0">
+      <TextArea fx:id="taComentario" layoutX="34.0" layoutY="177.0" prefHeight="246.0" prefWidth="266.0" wrapText="true">
          <styleClass>
             <String fx:value="text-field-focused" />
             <String fx:value="text-field-default" />

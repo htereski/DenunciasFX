@@ -79,7 +79,7 @@
             <String fx:value="styled-time-picker" />
             <String fx:value="text-field-focused" />
          </styleClass></DatePicker>
-      <TextArea fx:id="taDescricao" layoutX="34.0" layoutY="327.0" prefHeight="99.0" prefWidth="266.0" promptText="Descrição do incidente *">
+      <TextArea fx:id="taDescricao" layoutX="34.0" layoutY="327.0" prefHeight="99.0" prefWidth="266.0" promptText="Descrição do incidente *" wrapText="true">
          <styleClass>
             <String fx:value="text-field-default" />
             <String fx:value="text-field-focused" />
