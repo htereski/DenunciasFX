@@ -26,4 +26,4 @@ Apenas endereços de e-mail vinculados ao domínio do Gmail serão aceitos para 
 
 Certifique-se de configurar a permissão para "Aplicativos e Serviços de Terceiros" em sua conta do Gmail para possibilitar o envio de e-mails.
 
-## Vídeo demonstrativo: https://youtu.be/5WRR2sx7OL0
+### Vídeo demonstrativo: https://youtu.be/5WRR2sx7OL0
