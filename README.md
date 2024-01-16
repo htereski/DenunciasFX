@@ -1,23 +1,29 @@
-# Projeto denuncias feito em javaFX
+# Projeto Denúncias em JavaFX
 
-## Visão geral
-A ideia desse projeto é fazer com que os alunos possam fazer denúncias sobre ocorridos dentro da escola, e se manter informados sobre o acontecido.
+## Visão Geral
+O projeto Denúncias em JavaFX foi desenvolvido com o objetivo de permitir que os alunos relatem ocorrências dentro da escola, mantendo-os informados sobre eventos relevantes. A aplicação proporciona uma plataforma para a comunicação de situações diversas, contribuindo para um ambiente escolar mais seguro e transparente.
 
-### Para dar o start
-Para fazer o App startar é preciso criar um arquivo .env e configurar o arquivo init.sql sobrescrevendo o INSERT que está lá.  
+### Início Rápido
+Para iniciar o aplicativo, siga os passos abaixo:
 
-Só serão aceitos emails que pertençam ao domínio do Gmail.  
+1) Crie um arquivo .env na raiz do projeto.
+2) Configure o arquivo init.sql, substituindo o INSERT existente conforme necessário.
 
-Não esqueça de configurar "aplicativos e serviços de terceiros" do Gmail para poder fazer o envio dos emails.
+### Requisitos para o Arquivo .env
 
-### O arquivo .env precisa conter as seguintes chaves e valores
+O arquivo .env deve conter as seguintes chaves e valores:
 
-#### URL_DB=sua_URL
-#### DB_NAME=nome_do_banco
-#### DB_USER=seu_usuario
-#### DB_PASSWORD=sua_senha
+URL_DB=sua_URL
+DB_NAME=nome_do_banco
+DB_USER=seu_usuario
+DB_PASSWORD=sua_senha
+EMAIL_USERNAME=seu@email.com
+EMAIL_PASSWORD=sua_senha
 
-#### EMAIL_USERNAME=seu@email.com
-#### EMAIL_PASSWORD=sua_senha
+### Nota Importante
+
+Apenas endereços de e-mail vinculados ao domínio do Gmail serão aceitos para as denúncias.
+
+Certifique-se de configurar a permissão para "Aplicativos e Serviços de Terceiros" em sua conta do Gmail para possibilitar o envio de e-mails.
 
 ## Vídeo demonstrativo: https://youtu.be/5WRR2sx7OL0
