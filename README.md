@@ -13,12 +13,12 @@ Para iniciar o aplicativo, siga os passos abaixo:
 
 O arquivo .env deve conter as seguintes chaves e valores:
 
-URL_DB=sua_URL
-DB_NAME=nome_do_banco
-DB_USER=seu_usuario
-DB_PASSWORD=sua_senha
-EMAIL_USERNAME=seu@email.com
-EMAIL_PASSWORD=sua_senha
+URL_DB=sua_URL  
+DB_NAME=nome_do_banco  
+DB_USER=seu_usuario  
+DB_PASSWORD=sua_senha  
+EMAIL_USERNAME=seu@email.com  
+EMAIL_PASSWORD=sua_senha  
 
 ### Nota Importante
 
