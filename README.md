@@ -9,17 +9,6 @@ Para iniciar o aplicativo, siga os passos abaixo:
 1) Crie um arquivo .env na raiz do projeto.
 2) Configure o arquivo init.sql, substituindo o INSERT existente conforme necessário.
 
-### Requisitos para o Arquivo .env
-
-O arquivo .env deve conter as seguintes chaves e valores:
-
-URL_DB=sua_URL  
-DB_NAME=nome_do_banco  
-DB_USER=seu_usuario  
-DB_PASSWORD=sua_senha  
-EMAIL_USERNAME=seu@email.com  
-EMAIL_PASSWORD=sua_senha  
-
 ### Nota Importante
 
 Apenas endereços de e-mail vinculados ao domínio do Gmail serão aceitos para as denúncias.
